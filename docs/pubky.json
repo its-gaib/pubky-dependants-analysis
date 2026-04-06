@@ -1,6 +1,6 @@
 {
   "crate": "pubky",
-  "updated_at": "2026-04-06T10:36:00.749972+00:00",
+  "updated_at": "2026-04-06T12:10:12.908145+00:00",
   "total": 18,
   "summary": {
     "direct": 17,
@@ -177,17 +177,26 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 17389,
-    "recent": 1490
+    "total": 17400,
+    "recent": 1501
   },
   "npm_downloads": {
-    "total": 106,
-    "recent": 5
+    "total": 15077,
+    "recent": 2071
+  },
+  "rn_downloads": {
+    "total": 5224,
+    "recent": 84
   },
   "npm_dependents": [
     {
-      "package": "@synonymdev/pubky",
-      "description": "Pubky client",
+      "package": "pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "lightning",
+      "description": "Lightning Network client library",
       "source": "npm_registry"
     },
     {
@@ -196,13 +205,98 @@
       "source": "npm_registry"
     },
     {
-      "package": "pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications",
+      "package": "@synonymdev/result",
+      "description": "Result helper class",
       "source": "npm_registry"
     },
     {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "package": "astra-lightning",
+      "description": "Lightning Network client library",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtag",
+      "description": "Identity, discovery, and p2p communication for Slashtags protocol.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-lsp-http-client",
+      "description": "Blocktank Http Api Client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-lsp-btc-client",
+      "description": "Blocktank BTC client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-auth",
+      "description": "P2P authorization and bidirectional authentication with holepunching through Hyperswarm.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashdrive",
+      "description": "drive",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-lsp-ln2-client",
+      "description": "Blocktank LN2 client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-profile",
+      "description": "Slashtags Profile helper module.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-sdk",
+      "description": "slashtags development kit",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-lnurl",
+      "description": "React Native wrapper for LNURL",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/raw-transaction-decoder",
+      "description": "Decodes Raw Bitcoin Transactions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-lightning",
+      "description": "React Native wrapper for Lndmobile",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-client",
+      "description": "LSP client library",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-url",
+      "description": "Encodes and decodes Slashtags URLs",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-rpc",
+      "description": "helper module for creating RPCs using Slashtags nodes",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-keychain",
+      "description": "A utility module for generating keyPairs for Slashtags",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashauth",
+      "description": "Authorization using slashtags",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/feeds",
+      "description": "A library for creating and managing feeds using the web-relay",
       "source": "npm_registry"
     },
     {
@@ -211,60 +305,102 @@
       "source": "npm_registry"
     },
     {
+      "package": "@synonymdev/slashtags-core-data",
+      "description": "Slashtags Core Data is abstraction library that encapsulates logic related to managing data on Slashtags.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-worker2",
+      "description": "",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-actions",
+      "description": "Packaged handlers for Slashtags actions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/web-relay",
+      "description": "Slashtags Web Relay is a powerful abstraction library designed to simplify the management of data on Slashtags.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-slashtags",
+      "description": "React Native wrapper for Slashtags",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-cli",
+      "description": "CLI for slashtags",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-keychain",
+      "description": "Keychain Access for React Native",
+      "source": "npm_registry"
+    },
+    {
+      "package": "hackday-slashpay",
+      "description": "[Read more](https://docs.google.com/document/d/10rgPbDMer6uL7L8QZ5ve-KU_pkI_YSwSO4dmzUmjU6s/edit)",
+      "source": "npm_registry"
+    },
+    {
       "package": "@synonymdev/pkarr",
       "description": "Public-Key Addressable Resource Records (Pkarr); publish and resolve DNS records over Mainline DHT",
       "source": "npm_registry"
     },
     {
-      "package": "pubky/pkarr",
-      "source": "github_package_json"
+      "package": "@synonymdev/blocktank-util-slack-client",
+      "description": "Blocktank Slack client",
+      "source": "npm_registry"
     },
     {
-      "package": "PastaGringo/pubky-homeserver",
-      "source": "github_package_json"
+      "package": "@synonymdev/ln-constr-parser",
+      "description": "Lightning Connection String Parser",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/selfie-records",
+      "description": "SDK for interacting with the Selfie-Records DNS TXT records.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/bitkit-notification-client",
+      "description": "Bitkit Notification Server client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/feeds-daemon",
+      "description": "A simple HTTP RPC deamon to enable publishing Slashtags Exchange Feeds.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "slashtags-feed-reader",
+      "description": "Collection of helper functions to read Slashtags feeds from a Hyperdrive.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/slashtags-contacts",
+      "description": "Slashtags contacts management.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "react-native-libsodium-expo-plugin",
+      "description": "The Sodium crypto library for React Native.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/lightning-channel-id",
+      "description": "Convert lightning channel id formats",
+      "source": "npm_registry"
     },
     {
       "package": "pubky/pubky-core",
-      "source": "github_package_json"
-    },
-    {
-      "package": "gillohner/eventky",
-      "source": "github_package_json"
-    },
-    {
-      "package": "coreyphillips/geostories",
-      "source": "github_package_json"
-    },
-    {
-      "package": "aljazceru/pak",
-      "source": "github_package_json"
-    },
-    {
-      "package": "BitcoinErrorLog/paykit-rs",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-app",
-      "source": "github_package_json"
-    },
-    {
-      "package": "gillohner/pubky-canva",
-      "source": "github_package_json"
-    },
-    {
-      "package": "PastaGringo/pubky-roadmap",
-      "source": "github_package_json"
-    },
-    {
-      "package": "coreyphillips/pubky-private-messenger",
-      "source": "github_package_json"
-    },
-    {
-      "package": "ntheile/bitkit",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-ring",
       "source": "github_package_json"
     },
     {
@@ -272,15 +408,15 @@
       "source": "github_package_json"
     },
     {
-      "package": "pubky/react-native-pubky",
+      "package": "PastaGringo/pubky-homeserver",
       "source": "github_package_json"
     },
     {
-      "package": "gillohner/pubky-tools",
+      "package": "aljazceru/pak",
       "source": "github_package_json"
     },
     {
-      "package": "pubky/pkdns-digger",
+      "package": "coreyphillips/geostories",
       "source": "github_package_json"
     },
     {
@@ -288,23 +424,7 @@
       "source": "github_package_json"
     },
     {
-      "package": "pubky/pubky-app-specs",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/homegate-hackathon25",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-ai-bot",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-explorer",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/ai-rand",
+      "package": "PastaGringo/pubky-roadmap",
       "source": "github_package_json"
     },
     {
@@ -312,15 +432,39 @@
       "source": "github_package_json"
     },
     {
-      "package": "pubky/arcade",
+      "package": "pubky/pubky-explorer",
       "source": "github_package_json"
     },
     {
-      "package": "pubky/paykit-rs",
+      "package": "gillohner/pubky-tools",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/homegate-hackathon25",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-canva",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/eventky",
       "source": "github_package_json"
     },
     {
       "package": "pubky/workshop",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/arcade",
       "source": "github_package_json"
     }
   ]

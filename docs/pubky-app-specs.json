@@ -1,6 +1,6 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-04-06T10:36:17.600163+00:00",
+  "updated_at": "2026-04-06T12:10:30.156216+00:00",
   "total": 4,
   "summary": {
     "direct": 4
@@ -49,8 +49,8 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 8245,
-    "recent": 391
+    "total": 8248,
+    "recent": 394
   },
   "npm_downloads": {
     "total": 11400,
