@@ -42,6 +42,9 @@ def fetch_crates_io_reverse_deps(crate_name: str) -> list[dict]:
             headers={"User-Agent": USER_AGENT},
             timeout=30,
         )
+        if resp.status_code == 404:
+            log.warning("Crate %s not found on crates.io", crate_name)
+            return results
         resp.raise_for_status()
         data = resp.json()
 
