@@ -1,0 +1,96 @@
+{
+  "crate": "pubky",
+  "updated_at": "2026-04-06T07:36:58.936996+00:00",
+  "total": 5,
+  "summary": {
+    "pubky-messenger": 1,
+    "pubky-app-specs": 1,
+    "pubky-cli": 1,
+    "nexus-common": 1,
+    "pubky-noise": 1
+  },
+  "lists": {
+    "pubky-messenger": [
+      {
+        "repo": "coreyphillips/pubky-messenger",
+        "chain": [
+          "pubky-messenger",
+          "pubky"
+        ],
+        "stars": 2
+      }
+    ],
+    "pubky-app-specs": [
+      {
+        "repo": "pubky/pubky-app-specs",
+        "chain": [
+          "pubky-app-specs",
+          "pubky"
+        ],
+        "stars": 8
+      }
+    ],
+    "pubky-cli": [
+      {
+        "repo": "pubky/pubky-cli",
+        "chain": [
+          "pubky-cli",
+          "pubky"
+        ],
+        "stars": 0
+      }
+    ],
+    "nexus-common": [
+      {
+        "repo": "pubky/pubky-nexus",
+        "chain": [
+          "nexus-common",
+          "pubky"
+        ],
+        "stars": 19
+      }
+    ],
+    "pubky-noise": [
+      {
+        "repo": "pubky/pubky-noise",
+        "chain": [
+          "pubky-noise",
+          "pubky"
+        ],
+        "stars": 2
+      }
+    ]
+  },
+  "npm_dependents": [
+    {
+      "package": "@synonymdev/pubky",
+      "description": "Pubky client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-pubky",
+      "description": "React Native Implementation of Pubky",
+      "source": "npm_registry"
+    },
+    {
+      "package": "pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "noskey",
+      "description": "generate nostr key",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/pkarr",
+      "description": "Public-Key Addressable Resource Records (Pkarr); publish and resolve DNS records over Mainline DHT",
+      "source": "npm_registry"
+    }
+  ]
+}
