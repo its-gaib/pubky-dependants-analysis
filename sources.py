@@ -165,6 +165,76 @@ def fetch_file_content(repo: str, path: str) -> str | None:
         return _fetch_raw(repo, path)
 
 
+def fetch_github_stars(repo: str) -> int | None:
+    """Fetch the star count for a GitHub repo."""
+    try:
+        result = subprocess.run(
+            ["gh", "api", f"repos/{repo}", "--jq", ".stargazers_count"],
+            capture_output=True, text=True, timeout=15,
+        )
+        if result.returncode == 0 and result.stdout.strip().isdigit():
+            return int(result.stdout.strip())
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        pass
+    return None
+
+
+def scrape_npm_dependents(package_name: str) -> list[dict]:
+    """Scrape npm dependents for a package.
+
+    npm doesn't have a public API for dependents, but the website
+    exposes them at npmjs.com/browse/depended/{package}.
+    """
+    dependents = []
+    page = 0
+
+    while True:
+        offset = page * 36
+        url = f"https://www.npmjs.com/browse/depended/{package_name}?offset={offset}"
+        try:
+            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=30)
+            if resp.status_code != 200:
+                break
+        except requests.RequestException as e:
+            print(f"Warning: npm dependents fetch failed: {e}")
+            break
+
+        html = resp.text
+
+        # Extract package names from the dependents page
+        found = []
+        for match in re.finditer(
+            r'<a[^>]+href="/package/([^"]+)"[^>]*class="[^"]*"[^>]*>',
+            html,
+        ):
+            pkg = match.group(1)
+            if pkg != package_name and pkg not in found:
+                found.append(pkg)
+
+        # Also try pattern with package listing sections
+        if not found:
+            for match in re.finditer(
+                r'"package"[^}]*"name"\s*:\s*"([^"]+)"',
+                html,
+            ):
+                pkg = match.group(1)
+                if pkg != package_name and pkg not in found:
+                    found.append(pkg)
+
+        if not found:
+            break
+
+        for pkg in found:
+            dependents.append({"package": pkg, "source": "npm"})
+
+        page += 1
+        if page >= 10:  # limit pages
+            break
+        time.sleep(1)
+
+    return dependents
+
+
 def _fetch_raw(repo: str, path: str) -> str | None:
     """Fetch raw file content from GitHub."""
     for branch in ("main", "master", "develop"):

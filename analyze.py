@@ -11,13 +11,15 @@ from sources import (
     RepoMatch,
     fetch_crates_io_reverse_deps,
     fetch_file_content,
+    fetch_github_stars,
     scrape_github_dependents,
+    scrape_npm_dependents,
     search_github_cargo_lock,
     search_github_cargo_toml,
 )
 
 
-def analyze_crate(crate_name: str, github_repo: str) -> str:
+def analyze_crate(crate_name: str, github_repo: str, npm_package: str | None = None) -> str:
     """Run the full analysis pipeline for a single crate."""
     print(f"\n=== Analyzing {crate_name} ({github_repo}) ===")
 
@@ -40,6 +42,12 @@ def analyze_crate(crate_name: str, github_repo: str) -> str:
     dependents = scrape_github_dependents(github_repo)
     print(f"  Found {len(dependents)} repos on dependents page")
 
+    npm_deps = []
+    if npm_package:
+        print(f"  Scraping npm dependents for {npm_package}...")
+        npm_deps = scrape_npm_dependents(npm_package)
+        print(f"  Found {len(npm_deps)} npm dependents")
+
     # Merge all sources into a unified repo set
     all_repos: dict[str, RepoMatch] = {}
 
@@ -59,10 +67,9 @@ def analyze_crate(crate_name: str, github_repo: str) -> str:
 
     # Add repos from crates.io that have a repository URL
     for dep in crates_io_deps:
-        repo_url = dep.get("repository", "")
+        repo_url = dep.get("repository") or ""
         if "github.com/" in repo_url:
             repo_name = repo_url.rstrip("/").split("github.com/")[-1]
-            # Remove .git suffix if present
             repo_name = repo_name.removesuffix(".git")
             if repo_name not in all_repos:
                 all_repos[repo_name] = RepoMatch(repo=repo_name, source="crates_io")
@@ -88,11 +95,20 @@ def analyze_crate(crate_name: str, github_repo: str) -> str:
 
     print(f"  Classified {len(classified_repos)} repos")
 
-    # Phase 3: Categorize and output
-    print("\nPhase 3: Categorizing and writing output...")
+    # Phase 3: Fetch GitHub stars
+    print("\nPhase 3: Fetching GitHub stars...")
+    for i, repo_data in enumerate(classified_repos):
+        if (i + 1) % 20 == 0:
+            print(f"  Fetching stars {i + 1}/{len(classified_repos)}...")
+        stars = fetch_github_stars(repo_data["repo"])
+        repo_data["stars"] = stars
+        time.sleep(0.3)  # rate limiting
+
+    # Phase 4: Categorize and output
+    print("\nPhase 4: Categorizing and writing output...")
     categorized = categorize(classified_repos, crate_name)
 
-    output_path = write_output(crate_name, categorized)
+    output_path = write_output(crate_name, categorized, npm_dependents=npm_deps)
     print(f"  Wrote {output_path}")
 
     # Print summary
@@ -115,8 +131,6 @@ def _classify_repo(repo_name: str, match: RepoMatch, target_crate: str) -> dict 
                 result = classify_cargo_toml(content, target_crate)
                 if result and result["kind"] == "direct":
                     classification = result
-                    # For direct deps, chain is simple: [crate_name, target]
-                    # Try to get the crate name from the toml
                     crate_name = _extract_crate_name(content)
                     chain = [crate_name or repo_name.split("/")[-1], target_crate]
                     break
@@ -131,7 +145,6 @@ def _classify_repo(repo_name: str, match: RepoMatch, target_crate: str) -> dict 
             if content and target_crate in content:
                 chains = trace_chains(content, target_crate)
                 if chains:
-                    # Pick the shortest chain
                     chain = min(chains, key=len)
                     break
 
@@ -164,7 +177,11 @@ def main():
     crates = json.loads(config_path.read_text())
 
     for crate_config in crates:
-        analyze_crate(crate_config["crate"], crate_config["github_repo"])
+        analyze_crate(
+            crate_config["crate"],
+            crate_config["github_repo"],
+            npm_package=crate_config.get("npm_package"),
+        )
 
 
 if __name__ == "__main__":

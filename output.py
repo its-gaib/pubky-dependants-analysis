@@ -5,7 +5,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-def write_output(crate_name: str, categorized: dict, output_dir: str = "docs"):
+def write_output(
+    crate_name: str,
+    categorized: dict,
+    output_dir: str = "docs",
+    npm_dependents: list[dict] | None = None,
+):
     """Write categorized dependants to a JSON file."""
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
@@ -23,6 +28,9 @@ def write_output(crate_name: str, categorized: dict, output_dir: str = "docs"):
         "summary": summary,
         "lists": categorized,
     }
+
+    if npm_dependents:
+        output["npm_dependents"] = npm_dependents
 
     path = Path(output_dir) / f"{crate_name}.json"
     path.write_text(json.dumps(output, indent=2) + "\n")
