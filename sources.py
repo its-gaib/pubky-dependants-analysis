@@ -150,7 +150,7 @@ def scrape_github_dependents(github_repo: str) -> list[str]:
 
 def _extract_package_ids(html: str) -> list[str]:
     """Extract all package_id values from the dependents page package selector."""
-    return re.findall(r'package_id=([A-Za-z0-9=]+)', html)
+    return re.findall(r"package_id=([A-Za-z0-9=]+)", html)
 
 
 def _fetch_dependents_page(url: str) -> str | None:
@@ -163,10 +163,19 @@ def _fetch_dependents_page(url: str) -> str | None:
         except requests.RequestException as e:
             if attempt < SCRAPE_MAX_RETRIES - 1:
                 delay = SCRAPE_DELAY * (attempt + 1)
-                log.warning("Dependents page fetch failed (attempt %d): %s — retrying in %ds", attempt + 1, e, delay)
+                log.warning(
+                    "Dependents page fetch failed (attempt %d): %s — retrying in %ds",
+                    attempt + 1,
+                    e,
+                    delay,
+                )
                 time.sleep(delay)
             else:
-                log.warning("Dependents page fetch failed after %d attempts: %s", SCRAPE_MAX_RETRIES, e)
+                log.warning(
+                    "Dependents page fetch failed after %d attempts: %s",
+                    SCRAPE_MAX_RETRIES,
+                    e,
+                )
     return None
 
 
