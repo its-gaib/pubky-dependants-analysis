@@ -19,6 +19,9 @@ CRATES_IO_BASE = "https://crates.io/api/v1"
 CRATES_IO_DELAY = 1  # seconds between crates.io requests
 SCRAPE_DELAY = 2  # seconds between dependents page requests
 SCRAPE_MAX_RETRIES = 3  # retries per page on failure
+GH_SEARCH_DELAY = 5  # seconds to wait before each gh search code call
+GH_SEARCH_MAX_RETRIES = 3  # retries on 429
+GH_SEARCH_BACKOFF = 30  # initial backoff seconds on 429, doubles each retry
 
 
 @dataclass
@@ -78,32 +81,54 @@ def search_github_cargo_lock(crate_name: str) -> list[RepoMatch]:
 
 
 def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch]:
-    """Run gh search code and return RepoMatch objects."""
-    try:
-        result = subprocess.run(
-            [
-                "gh",
-                "search",
-                "code",
-                query,
-                "--filename",
-                filename,
-                "--limit",
-                "100",
-                "--json",
-                "repository,path",
-            ],
-            capture_output=True,
-            text=True,
-            timeout=60,
-        )
-        if result.returncode != 0:
-            log.warning("gh search failed: %s", result.stderr)
-            return []
+    """Run gh search code and return RepoMatch objects, with retry on 429."""
+    time.sleep(GH_SEARCH_DELAY)  # pre-delay to avoid hitting rate limit
 
-        items = json.loads(result.stdout)
-    except (subprocess.TimeoutExpired, json.JSONDecodeError, FileNotFoundError) as e:
-        log.warning("gh search error: %s", e)
+    cmd = [
+        "gh",
+        "search",
+        "code",
+        query,
+        "--filename",
+        filename,
+        "--limit",
+        "100",
+        "--json",
+        "repository,path",
+    ]
+
+    for attempt in range(GH_SEARCH_MAX_RETRIES):
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=60,
+            )
+            if result.returncode == 0:
+                items = json.loads(result.stdout)
+                break
+            if "429" in result.stderr:
+                backoff = GH_SEARCH_BACKOFF * (2**attempt)
+                log.warning(
+                    "gh search rate limited (attempt %d/%d), retrying in %ds...",
+                    attempt + 1,
+                    GH_SEARCH_MAX_RETRIES,
+                    backoff,
+                )
+                time.sleep(backoff)
+                continue
+            log.warning("gh search failed: %s", result.stderr.strip())
+            return []
+        except (
+            subprocess.TimeoutExpired,
+            json.JSONDecodeError,
+            FileNotFoundError,
+        ) as e:
+            log.warning("gh search error: %s", e)
+            return []
+    else:
+        log.warning("gh search failed after %d retries", GH_SEARCH_MAX_RETRIES)
         return []
 
     repo_map: dict[str, RepoMatch] = {}
@@ -184,13 +209,10 @@ def _scrape_dependents_pages(start_url: str, github_repo: str) -> list[str]:
     repos: list[str] = []
     url = start_url
 
-    page_num = 0
     while True:
         html = _fetch_dependents_page(url)
         if html is None:
             break
-
-        page_repos_before = len(repos)
 
         for match in re.finditer(
             r'<a[^>]+data-hovercard-type="repository"[^>]+href="/([^"]+)"',
@@ -210,15 +232,7 @@ def _scrape_dependents_pages(start_url: str, github_repo: str) -> list[str]:
         if not url.startswith("http"):
             url = f"https://github.com{url}"
 
-        if page_num > 0 and len(repos) == page_repos_before:
-            log.warning(
-                "Dependents page %d returned no new repos — HTML structure may have changed",
-                page_num + 1,
-            )
-            break
-
         time.sleep(SCRAPE_DELAY)
-        page_num += 1
 
     return repos
 
