@@ -15,7 +15,8 @@
   .meta { font-size: .8rem; color: #666; margin-bottom: .5rem; display: flex; justify-content: space-between; align-items: baseline; }
   .meta a { color: #0066cc; }
   .stats { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-  .stat-card { flex: 1; min-width: 140px; background: #fff; border: 1px solid #e0e0e0; padding: .75rem 1rem; }
+  .stat-card { flex: 1; min-width: 140px; background: #fff; border: 1px solid #e0e0e0; padding: .75rem 1rem; text-decoration: none; color: inherit; display: block; transition: border-color .15s; }
+  .stat-card:hover { border-color: #999; cursor: pointer; }
   .stat-value { font-size: 1.4rem; font-weight: bold; line-height: 1.2; }
   .stat-label { font-size: .75rem; color: #666; margin-top: .15rem; }
   .stat-sub { font-size: .75rem; color: #999; margin-top: .25rem; }
@@ -50,6 +51,12 @@
 
 <script>
 const CRATES = ["pkarr", "pubky", "pubky-app-specs"];
+const CRATE_META = {
+  "pkarr": { github: "pubky/pkarr", npm: "pkarr", display: "PKARR" },
+  "pubky": { github: "pubky/pubky-core", npm: "pubky", display: "Pubky" },
+  "pubky-app-specs": { github: "pubky/pubky-app-specs", npm: "pubky-app-specs", display: "pubky-app-specs" }
+};
+function displayName(crate) { return (CRATE_META[crate] && CRATE_META[crate].display) || crate; }
 const BASE = location.href.replace(/\/[^/]*$/, "");
 const cache = {};
 const COLORS = ["#2563eb","#dc2626","#16a34a","#9333ea","#ea580c","#0891b2","#be185d","#65a30d","#6d28d9","#d97706","#4f46e5","#059669"];
@@ -60,13 +67,14 @@ const content = document.getElementById("content");
 CRATES.forEach(c => {
   const btn = document.createElement("button");
   btn.className = "tab";
-  btn.textContent = c;
+  btn.textContent = displayName(c);
+  btn.dataset.crate = c;
   btn.onclick = () => load(c);
   tabs.appendChild(btn);
 });
 
 async function load(crate) {
-  tabs.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.textContent === crate));
+  tabs.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.crate === crate));
   content.innerHTML = '<p class="loading">Loading...</p>';
 
   if (!cache[crate]) {
@@ -127,15 +135,20 @@ function render(data) {
     return `<div class="category"><div class="cat-header"><span class="cat-name">${name}</span><span class="cat-stat">${count} repos (${pct}%)</span></div><div class="top-repos">${rows}</div></div>`;
   }).join("");
 
-  let statCards = `<div class="stat-card"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">public dependants</div></div>`;
-  if (dl) statCards += `<div class="stat-card"><div class="stat-value">${dl.total.toLocaleString()}</div><div class="stat-label">crates.io downloads (all-time)</div><div class="stat-sub">${dl.recent.toLocaleString()} in last 90 days</div></div>`;
-  if (ndl) statCards += `<div class="stat-card"><div class="stat-value">${ndl.total.toLocaleString()}</div><div class="stat-label">npm downloads (all-time)</div><div class="stat-sub">${ndl.recent.toLocaleString()} in last 30 days</div></div>`;
+  const meta = CRATE_META[data.crate] || {};
+  const ghDepsUrl = meta.github ? `https://github.com/${meta.github}/network/dependents` : "#";
+  const cratesUrl = `https://crates.io/crates/${data.crate}`;
+  const npmUrl = meta.npm ? `https://www.npmjs.com/package/${meta.npm}` : "#";
+
+  let statCards = `<a class="stat-card" href="${ghDepsUrl}" target="_blank"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">public dependants</div></a>`;
+  if (dl) statCards += `<a class="stat-card" href="${cratesUrl}" target="_blank"><div class="stat-value">${dl.total.toLocaleString()}</div><div class="stat-label">crates.io downloads (all-time)</div><div class="stat-sub">${dl.recent.toLocaleString()} in last 90 days</div></a>`;
+  if (ndl) statCards += `<a class="stat-card" href="${npmUrl}" target="_blank"><div class="stat-value">${ndl.total.toLocaleString()}</div><div class="stat-label">npm downloads (all-time)</div><div class="stat-sub">${ndl.recent.toLocaleString()} in last 30 days</div></a>`;
 
   content.innerHTML = `
     <div class="meta"><span>Updated ${updated}</span><a href="${jsonUrl}">JSON API</a></div>
     <div class="stats">${statCards}</div>
-    <div class="section-title">How projects depend on ${data.crate}</div>
-    <div class="section-desc">Many projects don't add ${data.crate} directly &mdash; they depend on an intermediary crate (e.g. iroh), which pulls in ${data.crate} as a transitive dependency.</div>
+    <div class="section-title">How projects depend on ${displayName(data.crate)}</div>
+    <div class="section-desc">Many projects don't add ${displayName(data.crate)} directly &mdash; they depend on an intermediary crate (e.g. iroh), which pulls in ${displayName(data.crate)} as a transitive dependency.</div>
     <div class="chart-row"><div class="chart-col">${svg}</div><div class="legend">${legend}</div></div>
     ${categories}
     <div class="note">This analysis only tracks public / open-source projects. Private and proprietary projects that depend on this crate are not visible. The crates.io download count above includes all usage (public and private) and serves as a rough indicator of total adoption.</div>`;
