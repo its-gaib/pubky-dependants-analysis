@@ -1,6 +1,7 @@
 """Fetch dependant data from crates.io, GitHub search, and GitHub dependents page."""
 
 import base64
+import html as html_mod
 import json
 import logging
 import re
@@ -143,39 +144,9 @@ def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch
 
 
 def scrape_github_dependents(github_repo: str) -> list[str]:
-    """Scrape the GitHub dependents page across all packages."""
-    base_url = f"https://github.com/{github_repo}/network/dependents"
-
-    # Discover all package_ids from the first page.
-    html = _fetch_dependents_page(base_url)
-    if html is None:
-        return []
-
-    package_ids = _extract_package_ids(html)
-    if not package_ids:
-        # No package selector — scrape the single default view.
-        package_ids = [None]
-
-    all_repos: list[str] = []
-    seen: set[str] = set()
-
-    for pkg_id in package_ids:
-        if pkg_id is None:
-            start_url = base_url
-        else:
-            start_url = f"{base_url}?package_id={pkg_id}"
-
-        for repo in _scrape_dependents_pages(start_url, github_repo):
-            if repo not in seen:
-                seen.add(repo)
-                all_repos.append(repo)
-
-    return all_repos
-
-
-def _extract_package_ids(html: str) -> list[str]:
-    """Extract all package_id values from the dependents page package selector."""
-    return re.findall(r"package_id=([A-Za-z0-9=]+)", html)
+    """Scrape the GitHub dependents page, following all pagination."""
+    url = f"https://github.com/{github_repo}/network/dependents"
+    return _scrape_dependents_pages(url, github_repo)
 
 
 def _fetch_dependents_page(url: str) -> str | None:
@@ -228,7 +199,7 @@ def _scrape_dependents_pages(start_url: str, github_repo: str) -> list[str]:
         )
         if not next_match:
             break
-        url = next_match.group(1)
+        url = html_mod.unescape(next_match.group(1))
         if not url.startswith("http"):
             url = f"https://github.com{url}"
 
