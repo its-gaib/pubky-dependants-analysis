@@ -35,7 +35,10 @@ STARS_DELAY = 0.3  # seconds between star-fetch API calls
 
 
 def analyze_crate(
-    crate_name: str, github_repo: str, npm_package: str | None = None
+    crate_name: str,
+    github_repo: str,
+    npm_package: str | None = None,
+    react_native_package: str | None = None,
 ) -> str:
     """Run the full analysis pipeline for a single crate."""
     log.info("=== Analyzing %s (%s) ===", crate_name, github_repo)
@@ -71,9 +74,12 @@ def analyze_crate(
     log.info("Fetching download counts...")
     downloads = fetch_crates_io_downloads(crate_name)
     npm_downloads = fetch_npm_downloads(npm_package) if npm_package else None
+    rn_downloads = (
+        fetch_npm_downloads(react_native_package) if react_native_package else None
+    )
 
     output_path = _write_output(
-        crate_name, categorized, npm_deps, downloads, npm_downloads
+        crate_name, categorized, npm_deps, downloads, npm_downloads, rn_downloads
     )
     log.info("Wrote %s", output_path)
 
@@ -198,6 +204,7 @@ def _write_output(
     npm_dependents: list[dict],
     downloads: dict | None,
     npm_downloads: dict | None,
+    rn_downloads: dict | None = None,
     output_dir: str = "docs",
 ) -> str:
     """Write categorized dependents to a JSON file."""
@@ -223,6 +230,9 @@ def _write_output(
 
     if npm_downloads:
         output["npm_downloads"] = npm_downloads
+
+    if rn_downloads:
+        output["rn_downloads"] = rn_downloads
 
     if npm_dependents:
         output["npm_dependents"] = npm_dependents
@@ -254,6 +264,7 @@ def main():
             crate_config["crate"],
             crate_config["github_repo"],
             npm_package=crate_config.get("npm_package"),
+            react_native_package=crate_config.get("react_native_package"),
         )
 
 

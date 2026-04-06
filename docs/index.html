@@ -53,7 +53,7 @@
 const CRATES = ["pkarr", "pubky", "pubky-app-specs"];
 const CRATE_META = {
   "pkarr": { github: "pubky/pkarr", npm: "@synonymdev/pkarr", display: "PKARR" },
-  "pubky": { github: "pubky/pubky-core", npm: "pubky", display: "Pubky" },
+  "pubky": { github: "pubky/pubky-core", npm: "@synonymdev/pubky", rn: "@synonymdev/react-native-pubky", display: "Pubky" },
   "pubky-app-specs": { github: "pubky/pubky-app-specs", npm: "pubky-app-specs", display: "pubky-app-specs" }
 };
 function displayName(crate) { return (CRATE_META[crate] && CRATE_META[crate].display) || crate; }
@@ -93,6 +93,7 @@ function render(data) {
   const jsonUrl = `${BASE}/${data.crate}.json`;
   const dl = data.crates_io_downloads;
   const ndl = data.npm_downloads;
+  const rndl = data.rn_downloads;
 
   // Group small categories (< 2%) into "Other"
   const threshold = total * 0.02;
@@ -139,10 +140,12 @@ function render(data) {
   const ghDepsUrl = meta.github ? `https://github.com/${meta.github}/network/dependents` : "#";
   const cratesUrl = `https://crates.io/crates/${data.crate}`;
   const npmUrl = meta.npm ? `https://www.npmjs.com/package/${meta.npm}` : "#";
+  const rnUrl = meta.rn ? `https://www.npmjs.com/package/${meta.rn}` : "#";
 
   let statCards = `<a class="stat-card" href="${ghDepsUrl}" target="_blank"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">public dependants</div></a>`;
   if (dl) statCards += `<a class="stat-card" href="${cratesUrl}" target="_blank"><div class="stat-value">${dl.total.toLocaleString()}</div><div class="stat-label">crates.io downloads (all-time)</div><div class="stat-sub">${dl.recent.toLocaleString()} in last 90 days</div></a>`;
   if (ndl) statCards += `<a class="stat-card" href="${npmUrl}" target="_blank"><div class="stat-value">${ndl.total.toLocaleString()}</div><div class="stat-label">npm downloads (all-time)</div><div class="stat-sub">${ndl.recent.toLocaleString()} in last 30 days</div></a>`;
+  if (rndl) statCards += `<a class="stat-card" href="${rnUrl}" target="_blank"><div class="stat-value">${rndl.total.toLocaleString()}</div><div class="stat-label">React Native downloads (all-time)</div><div class="stat-sub">${rndl.recent.toLocaleString()} in last 30 days</div></a>`;
 
   content.innerHTML = `
     <div class="meta"><span>Updated ${updated}</span><a href="${jsonUrl}">JSON API</a></div>
