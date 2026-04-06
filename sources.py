@@ -35,6 +35,25 @@ class RepoMatch:
     source: str = ""  # where we found it
 
 
+def fetch_crates_io_downloads(crate_name: str) -> dict | None:
+    """Fetch download counts for a crate from crates.io."""
+    try:
+        resp = requests.get(
+            f"{CRATES_IO_BASE}/crates/{crate_name}",
+            headers={"User-Agent": USER_AGENT},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            return None
+        crate = resp.json().get("crate", {})
+        return {
+            "total": crate.get("downloads", 0),
+            "recent": crate.get("recent_downloads", 0),
+        }
+    except requests.RequestException:
+        return None
+
+
 def fetch_crates_io_reverse_deps(crate_name: str) -> list[dict]:
     """Fetch all published crates that depend on target crate from crates.io."""
     results = []

@@ -42,6 +42,10 @@ Available: `pkarr.json`, `pubky.json`
       }
     ]
   },
+  "crates_io_downloads": {             // crates.io download stats (if published)
+    "total": 611326,                   // all-time downloads (includes private/CI usage)
+    "recent": 214362                   // downloads in the last 90 days
+  },
   "npm_dependents": [...]              // npm packages referencing this crate (if applicable)
 }
 ```
@@ -52,3 +56,7 @@ Available: `pkarr.json`, `pubky.json`
 - **Any other key** (e.g. `"iroh"`, `"pubky"`): Projects where the target crate is a *transitive* dependency. The key name is the crate that directly depends on the target. Read the `chain` array left-to-right as the dependency path from the project's own crate down to the target.
 
 Example: `"chain": ["moq-cli", "moq-native", "web-transport-iroh", "iroh", "pkarr"]` means moq-cli depends on moq-native, which depends on web-transport-iroh, which depends on iroh, which depends on pkarr.
+
+## Limitations
+
+This analysis only tracks **public / open-source projects**. Private and proprietary projects that depend on these crates are not visible through GitHub's dependency graph or code search. The `crates_io_downloads` field provides a rough indicator of total adoption (public + private), since download counts include all usage — CI pipelines, proprietary builds, etc.

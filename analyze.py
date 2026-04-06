@@ -17,6 +17,7 @@ from classify import (
 )
 from sources import (
     RepoMatch,
+    fetch_crates_io_downloads,
     fetch_crates_io_reverse_deps,
     fetch_file_content,
     fetch_github_stars,
@@ -66,7 +67,10 @@ def analyze_crate(
         npm_deps = search_npm_dependents(npm_package)
         log.info("Found %d npm dependents", len(npm_deps))
 
-    output_path = _write_output(crate_name, categorized, npm_deps)
+    log.info("Fetching crates.io download counts...")
+    downloads = fetch_crates_io_downloads(crate_name)
+
+    output_path = _write_output(crate_name, categorized, npm_deps, downloads)
     log.info("Wrote %s", output_path)
 
     for list_name, entries in sorted(categorized.items()):
@@ -188,6 +192,7 @@ def _write_output(
     crate_name: str,
     categorized: dict[str, list[CategorizedEntry]],
     npm_dependents: list[dict],
+    downloads: dict | None,
     output_dir: str = "docs",
 ) -> str:
     """Write categorized dependents to a JSON file."""
@@ -207,6 +212,9 @@ def _write_output(
         "summary": summary,
         "lists": serialized,
     }
+
+    if downloads:
+        output["crates_io_downloads"] = downloads
 
     if npm_dependents:
         output["npm_dependents"] = npm_dependents

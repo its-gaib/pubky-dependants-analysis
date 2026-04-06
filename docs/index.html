@@ -30,6 +30,7 @@
   .stars { color: #666; }
   #content { min-height: 200px; }
   .loading { color: #999; padding: 2rem 0; }
+  .note { font-size: .75rem; color: #888; margin-top: 2rem; border-top: 1px solid #e0e0e0; padding-top: 1rem; }
 </style>
 </head>
 <body>
@@ -75,6 +76,7 @@ function render(data) {
   const { summary, total, lists } = data;
   const updated = new Date(data.updated_at).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
   const jsonUrl = `${BASE}/${data.crate}.json`;
+  const dl = data.crates_io_downloads;
 
   // Group small categories (< 2%) into "Other"
   const threshold = total * 0.02;
@@ -117,10 +119,13 @@ function render(data) {
     return `<div class="category"><div class="cat-header"><span class="cat-name">${name}</span><span class="cat-stat">${count} repos (${pct}%)</span></div><div class="top-repos">${rows}</div></div>`;
   }).join("");
 
+  const dlInfo = dl ? ` &middot; ${dl.total.toLocaleString()} crates.io downloads (${dl.recent.toLocaleString()} last 90 days)` : "";
+
   content.innerHTML = `
-    <div class="meta">Updated ${updated} &middot; ${total} dependants &middot; <a href="${jsonUrl}">JSON API</a></div>
+    <div class="meta">Updated ${updated} &middot; ${total} public dependants${dlInfo} &middot; <a href="${jsonUrl}">JSON API</a></div>
     <div class="chart-row"><div class="chart-col">${svg}</div><div class="legend">${legend}</div></div>
-    ${categories}`;
+    ${categories}
+    <div class="note">This analysis only tracks public / open-source projects. Private and proprietary projects that depend on this crate are not visible. The crates.io download count above includes all usage (public and private) and serves as a rough indicator of total adoption.</div>`;
 }
 
 load(CRATES[0]);
