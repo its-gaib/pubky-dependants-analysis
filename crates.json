@@ -1,4 +1,5 @@
 [
   {"crate": "pkarr", "github_repo": "pubky/pkarr", "npm_package": "pkarr"},
-  {"crate": "pubky", "github_repo": "pubky/pubky-core", "npm_package": "pubky"}
+  {"crate": "pubky", "github_repo": "pubky/pubky-core", "npm_package": "pubky"},
+  {"crate": "pubky-app-specs", "github_repo": "pubky/pubky-app-specs", "npm_package": "pubky-app-specs"}
 ]

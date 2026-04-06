@@ -10,7 +10,7 @@ Each analyzed crate has a JSON endpoint:
 https://its-gaib.github.io/pubky-dependants-analysis/{crate}.json
 ```
 
-Available: `pkarr.json`, `pubky.json`
+Available: `pkarr.json`, `pubky.json`, `pubky-app-specs.json`
 
 ## JSON Schema
 
