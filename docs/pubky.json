@@ -1,40 +1,141 @@
 {
   "crate": "pubky",
-  "updated_at": "2026-04-06T08:18:56.185367+00:00",
-  "total": 14,
+  "updated_at": "2026-04-06T09:48:24.300005+00:00",
+  "total": 18,
   "summary": {
-    "paykit-demo-cli": 1,
-    "pubky-noise": 2,
-    "pubky-messenger": 2,
-    "pubky-private-messenger": 1,
-    "vanity-pubky": 1,
-    "canva-indexer": 1,
-    "paykit-ffi": 1,
-    "pubky-app-specs": 1,
-    "pubky-cli": 1,
-    "pubkycore": 1,
-    "nexus-common": 1,
-    "bitkitcore": 1
+    "direct": 16,
+    "pubky-messenger": 1,
+    "pubky-app-specs": 1
   },
   "lists": {
-    "paykit-demo-cli": [
+    "direct": [
       {
         "repo": "BitcoinErrorLog/paykit-rs",
         "chain": [
-          "paykit-demo-cli",
+          "paykit-lib",
           "pubky"
         ],
-        "stars": 1
-      }
-    ],
-    "pubky-noise": [
+        "stars": 1,
+        "version": "workspace",
+        "optional": true
+      },
       {
         "repo": "BitcoinErrorLog/pubky-noise",
         "chain": [
           "pubky-noise",
           "pubky"
         ],
-        "stars": 2
+        "stars": 2,
+        "version": "workspace",
+        "optional": true
+      },
+      {
+        "repo": "MiguelMedeiros/ai-rand",
+        "chain": [
+          "client-pubky",
+          "pubky"
+        ],
+        "stars": 3,
+        "version": "0.4.2"
+      },
+      {
+        "repo": "SHAcollision/pubky-vibes",
+        "chain": [
+          "pubky-swiss-knife",
+          "pubky"
+        ],
+        "stars": 2,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "TrustEdge-Labs/trustedge",
+        "chain": [
+          "trustedge-pubky",
+          "pubky"
+        ],
+        "stars": 4,
+        "version": "0.5.4"
+      },
+      {
+        "repo": "coreyphillips/pubky-messenger",
+        "chain": [
+          "pubky-messenger",
+          "pubky"
+        ],
+        "stars": 2,
+        "version": "0.4"
+      },
+      {
+        "repo": "coreyphillips/pubky-private-messenger",
+        "chain": [
+          "pubky-private-messenger",
+          "pubky"
+        ],
+        "stars": 8,
+        "version": "0.4.2"
+      },
+      {
+        "repo": "coreyphillips/vanity-pubky",
+        "chain": [
+          "vanity-pubky",
+          "pubky"
+        ],
+        "stars": 3,
+        "version": "0.4.2"
+      },
+      {
+        "repo": "gillohner/pubky-canva",
+        "chain": [
+          "canva-indexer",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "workspace"
+      },
+      {
+        "repo": "ok300/pk-docs",
+        "chain": [
+          "pubky-snippets",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "pubky/paykit-rs",
+        "chain": [
+          "paykit-ffi",
+          "pubky"
+        ],
+        "stars": 3,
+        "version": "0.7.0"
+      },
+      {
+        "repo": "pubky/pubky-cli",
+        "chain": [
+          "pubky-cli",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "pubky/pubky-core-ffi",
+        "chain": [
+          "pubkycore",
+          "pubky"
+        ],
+        "stars": 2,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "pubky/pubky-nexus",
+        "chain": [
+          "pubky-nexus",
+          "pubky"
+        ],
+        "stars": 19,
+        "version": "0.7.0"
       },
       {
         "repo": "pubky/pubky-noise",
@@ -42,7 +143,17 @@
           "pubky-noise",
           "pubky"
         ],
-        "stars": 2
+        "stars": 2,
+        "version": "0.7.0"
+      },
+      {
+        "repo": "synonymdev/bitkit-core",
+        "chain": [
+          "bitkitcore",
+          "pubky"
+        ],
+        "stars": 5,
+        "version": "0.6.0"
       }
     ],
     "pubky-messenger": [
@@ -54,54 +165,6 @@
           "pubky"
         ],
         "stars": 0
-      },
-      {
-        "repo": "coreyphillips/pubky-messenger",
-        "chain": [
-          "pubky-messenger",
-          "pubky"
-        ],
-        "stars": 2
-      }
-    ],
-    "pubky-private-messenger": [
-      {
-        "repo": "coreyphillips/pubky-private-messenger",
-        "chain": [
-          "pubky-private-messenger",
-          "pubky"
-        ],
-        "stars": 8
-      }
-    ],
-    "vanity-pubky": [
-      {
-        "repo": "coreyphillips/vanity-pubky",
-        "chain": [
-          "vanity-pubky",
-          "pubky"
-        ],
-        "stars": 3
-      }
-    ],
-    "canva-indexer": [
-      {
-        "repo": "gillohner/pubky-canva",
-        "chain": [
-          "canva-indexer",
-          "pubky"
-        ],
-        "stars": 0
-      }
-    ],
-    "paykit-ffi": [
-      {
-        "repo": "pubky/paykit-rs",
-        "chain": [
-          "paykit-ffi",
-          "pubky"
-        ],
-        "stars": 3
       }
     ],
     "pubky-app-specs": [
@@ -113,47 +176,15 @@
         ],
         "stars": 8
       }
-    ],
-    "pubky-cli": [
-      {
-        "repo": "pubky/pubky-cli",
-        "chain": [
-          "pubky-cli",
-          "pubky"
-        ],
-        "stars": 0
-      }
-    ],
-    "pubkycore": [
-      {
-        "repo": "pubky/pubky-core-ffi",
-        "chain": [
-          "pubkycore",
-          "pubky"
-        ],
-        "stars": 2
-      }
-    ],
-    "nexus-common": [
-      {
-        "repo": "pubky/pubky-nexus",
-        "chain": [
-          "nexus-common",
-          "pubky"
-        ],
-        "stars": 19
-      }
-    ],
-    "bitkitcore": [
-      {
-        "repo": "synonymdev/bitkit-core",
-        "chain": [
-          "bitkitcore",
-          "pubky"
-        ],
-        "stars": 5
-      }
     ]
+  },
+  "crates_io_downloads": {
+    "total": 17389,
+    "recent": 1490
+  },
+  "npm_downloads": {
+    "total": 106,
+    "recent": 5
   },
   "npm_dependents": [
     {
