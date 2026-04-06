@@ -176,7 +176,12 @@ def main():
 
     crates = json.loads(config_path.read_text())
 
+    # Optional: filter to a single crate via CLI arg
+    filter_crate = sys.argv[1] if len(sys.argv) > 1 else None
+
     for crate_config in crates:
+        if filter_crate and crate_config["crate"] != filter_crate:
+            continue
         analyze_crate(
             crate_config["crate"],
             crate_config["github_repo"],
