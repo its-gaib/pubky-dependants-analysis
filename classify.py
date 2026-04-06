@@ -270,7 +270,7 @@ def categorize(repos: list[dict], target_crate: str) -> dict[str, list[dict]]:
     result = defaultdict(list)
 
     for repo in repos:
-        entry = {"repo": repo["repo"], "chain": repo["chain"]}
+        entry = {"repo": repo["repo"], "chain": repo["chain"], "stars": repo.get("stars")}
 
         if repo["classification"] and repo["classification"]["kind"] == "direct":
             entry.update({
