@@ -21,6 +21,7 @@ from sources import (
     fetch_crates_io_reverse_deps,
     fetch_file_content,
     fetch_github_stars,
+    fetch_npm_downloads,
     scrape_github_dependents,
     search_github_cargo_lock,
     search_github_cargo_toml,
@@ -67,10 +68,13 @@ def analyze_crate(
         npm_deps = search_npm_dependents(npm_package)
         log.info("Found %d npm dependents", len(npm_deps))
 
-    log.info("Fetching crates.io download counts...")
+    log.info("Fetching download counts...")
     downloads = fetch_crates_io_downloads(crate_name)
+    npm_downloads = fetch_npm_downloads(npm_package) if npm_package else None
 
-    output_path = _write_output(crate_name, categorized, npm_deps, downloads)
+    output_path = _write_output(
+        crate_name, categorized, npm_deps, downloads, npm_downloads
+    )
     log.info("Wrote %s", output_path)
 
     for list_name, entries in sorted(categorized.items()):
@@ -193,6 +197,7 @@ def _write_output(
     categorized: dict[str, list[CategorizedEntry]],
     npm_dependents: list[dict],
     downloads: dict | None,
+    npm_downloads: dict | None,
     output_dir: str = "docs",
 ) -> str:
     """Write categorized dependents to a JSON file."""
@@ -215,6 +220,9 @@ def _write_output(
 
     if downloads:
         output["crates_io_downloads"] = downloads
+
+    if npm_downloads:
+        output["npm_downloads"] = npm_downloads
 
     if npm_dependents:
         output["npm_dependents"] = npm_dependents

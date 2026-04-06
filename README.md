@@ -46,6 +46,10 @@ Available: `pkarr.json`, `pubky.json`
     "total": 611326,                   // all-time downloads (includes private/CI usage)
     "recent": 214362                   // downloads in the last 90 days
   },
+  "npm_downloads": {                   // npm download stats (if npm_package configured)
+    "total": 8871,                     // all-time downloads
+    "recent": 1050                     // downloads in the last 30 days
+  },
   "npm_dependents": [...]              // npm packages referencing this crate (if applicable)
 }
 ```

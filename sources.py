@@ -54,6 +54,34 @@ def fetch_crates_io_downloads(crate_name: str) -> dict | None:
         return None
 
 
+def fetch_npm_downloads(package_name: str) -> dict | None:
+    """Fetch download counts for an npm package."""
+    try:
+        # Last 30 days
+        resp = requests.get(
+            f"https://api.npmjs.org/downloads/point/last-month/{package_name}",
+            headers={"User-Agent": USER_AGENT},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            return None
+        recent = resp.json().get("downloads", 0)
+
+        # All-time (wide date range)
+        resp = requests.get(
+            f"https://api.npmjs.org/downloads/range/2000-01-01:2099-01-01/{package_name}",
+            headers={"User-Agent": USER_AGENT},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            return {"total": 0, "recent": recent}
+        total = sum(d["downloads"] for d in resp.json().get("downloads", []))
+
+        return {"total": total, "recent": recent}
+    except requests.RequestException:
+        return None
+
+
 def fetch_crates_io_reverse_deps(crate_name: str) -> list[dict]:
     """Fetch all published crates that depend on target crate from crates.io."""
     results = []
