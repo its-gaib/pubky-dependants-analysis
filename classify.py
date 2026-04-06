@@ -189,7 +189,7 @@ def _find_in_feature_flags(data: dict, target_crate: str) -> str | None:
 def categorize(
     repos: list[RepoAnalysis], target_crate: str
 ) -> dict[str, list[CategorizedEntry]]:
-    """Categorize repos into lists named after direct dependants."""
+    """Categorize repos into lists named after direct dependents."""
     result: dict[str, list[CategorizedEntry]] = defaultdict(list)
 
     for repo in repos:

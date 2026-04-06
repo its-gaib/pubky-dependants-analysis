@@ -1,4 +1,4 @@
-"""Main entry point for crate dependants analysis."""
+"""Main entry point for crate dependents analysis."""
 
 import json
 import logging
@@ -38,8 +38,8 @@ def analyze_crate(
     """Run the full analysis pipeline for a single crate."""
     log.info("=== Analyzing %s (%s) ===", crate_name, github_repo)
 
-    # Phase 1: Gather dependants from all sources
-    log.info("Phase 1: Gathering dependants...")
+    # Phase 1: Gather dependents from all sources
+    log.info("Phase 1: Gathering dependents...")
     all_repos = _gather_repos(crate_name, github_repo)
     log.info("Total unique repos to classify: %d", len(all_repos))
 
@@ -190,7 +190,7 @@ def _write_output(
     npm_dependents: list[dict],
     output_dir: str = "docs",
 ) -> str:
-    """Write categorized dependants to a JSON file."""
+    """Write categorized dependents to a JSON file."""
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     serialized = {

@@ -13,7 +13,7 @@ import requests
 log = logging.getLogger(__name__)
 
 USER_AGENT = (
-    "pubky-dependants-analysis (https://github.com/its-gaib/pubky-dependants-analysis)"
+    "pubky-dependents-analysis (https://github.com/its-gaib/pubky-dependents-analysis)"
 )
 CRATES_IO_BASE = "https://crates.io/api/v1"
 CRATES_IO_DELAY = 1  # seconds between crates.io requests
