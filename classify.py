@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 @dataclass
 class Classification:
     """Result of classifying a Cargo.toml's relationship to a target crate."""
+
     kind: str  # "direct" or "feature_flag"
     version: str = ""
     features: list[str] = field(default_factory=list)
@@ -19,6 +20,7 @@ class Classification:
 @dataclass
 class RepoAnalysis:
     """A classified repository with its dependency chain."""
+
     repo: str
     classification: Classification | None
     chain: list[str]
@@ -28,6 +30,7 @@ class RepoAnalysis:
 @dataclass
 class CategorizedEntry:
     """An entry in a categorized list."""
+
     repo: str
     chain: list[str]
     stars: int | None = None
@@ -83,7 +86,9 @@ def _parse_direct_dep(dep) -> Classification:
 
     return Classification(
         kind="direct",
-        version=dep.get("version", "workspace") if not dep.get("workspace") else "workspace",
+        version=dep.get("version", "workspace")
+        if not dep.get("workspace")
+        else "workspace",
         features=dep.get("features", []),
         optional=dep.get("optional", False),
         default_features=dep.get("default-features", True),
@@ -165,15 +170,17 @@ def _find_in_feature_flags(data: dict, target_crate: str) -> str | None:
     all_deps = list(data.get("dependencies", {}).items())
     all_deps += list(data.get("dev-dependencies", {}).items())
     all_deps += list(data.get("build-dependencies", {}).items())
-    all_deps += list(
-        data.get("workspace", {}).get("dependencies", {}).items()
-    )
+    all_deps += list(data.get("workspace", {}).get("dependencies", {}).items())
 
     for crate_name, dep_val in all_deps:
         if not isinstance(dep_val, dict):
             continue
         for feat in dep_val.get("features", []):
-            if feat == target_crate or f"-{target_crate}" in feat or f"{target_crate}/" in feat:
+            if (
+                feat == target_crate
+                or f"-{target_crate}" in feat
+                or f"{target_crate}/" in feat
+            ):
                 return crate_name
 
     return None
@@ -186,9 +193,7 @@ def categorize(
     result: dict[str, list[CategorizedEntry]] = defaultdict(list)
 
     for repo in repos:
-        entry = CategorizedEntry(
-            repo=repo.repo, chain=repo.chain, stars=repo.stars
-        )
+        entry = CategorizedEntry(repo=repo.repo, chain=repo.chain, stars=repo.stars)
 
         if repo.classification and repo.classification.kind == "direct":
             entry.version = repo.classification.version

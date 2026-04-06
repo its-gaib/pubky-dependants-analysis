@@ -1,7 +1,6 @@
 """Tests for list categorization logic."""
 
 from classify import (
-    CategorizedEntry,
     Classification,
     RepoAnalysis,
     categorize,
@@ -51,9 +50,7 @@ def test_transitive_via_fedimint_goes_to_fedimint_list():
         ),
     ]
     result = categorize(repos, "pkarr")
-    assert "some/fedimint-plugin" in [
-        r.repo for r in result["fedimint-server"]
-    ]
+    assert "some/fedimint-plugin" in [r.repo for r in result["fedimint-server"]]
 
 
 def test_deep_chain_categorized_by_direct_parent_of_target():

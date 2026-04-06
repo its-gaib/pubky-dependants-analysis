@@ -32,7 +32,9 @@ CLASSIFY_DELAY = 0.5  # seconds between repo classification API calls
 STARS_DELAY = 0.3  # seconds between star-fetch API calls
 
 
-def analyze_crate(crate_name: str, github_repo: str, npm_package: str | None = None) -> str:
+def analyze_crate(
+    crate_name: str, github_repo: str, npm_package: str | None = None
+) -> str:
     """Run the full analysis pipeline for a single crate."""
     log.info("=== Analyzing %s (%s) ===", crate_name, github_repo)
 
@@ -170,9 +172,7 @@ def _classify_repo(
     if not classification and not chain:
         return None
 
-    return RepoAnalysis(
-        repo=repo_name, classification=classification, chain=chain
-    )
+    return RepoAnalysis(repo=repo_name, classification=classification, chain=chain)
 
 
 def _extract_crate_name(toml_content: str) -> str | None:
@@ -194,8 +194,7 @@ def _write_output(
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     serialized = {
-        name: [e.to_dict() for e in entries]
-        for name, entries in categorized.items()
+        name: [e.to_dict() for e in entries] for name, entries in categorized.items()
     }
 
     summary = {name: len(entries) for name, entries in categorized.items()}

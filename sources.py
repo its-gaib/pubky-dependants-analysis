@@ -12,7 +12,9 @@ import requests
 
 log = logging.getLogger(__name__)
 
-USER_AGENT = "pubky-dependants-analysis (https://github.com/its-gaib/pubky-dependants-analysis)"
+USER_AGENT = (
+    "pubky-dependants-analysis (https://github.com/its-gaib/pubky-dependants-analysis)"
+)
 CRATES_IO_BASE = "https://crates.io/api/v1"
 CRATES_IO_DELAY = 1  # seconds between crates.io requests
 SCRAPE_DELAY = 1  # seconds between dependents page requests
@@ -22,6 +24,7 @@ SCRAPE_MAX_PAGES = 10
 @dataclass
 class RepoMatch:
     """A repository that references the target crate."""
+
     repo: str  # owner/name
     cargo_toml_paths: list[str] = field(default_factory=list)
     cargo_lock_paths: list[str] = field(default_factory=list)
@@ -43,12 +46,14 @@ def fetch_crates_io_reverse_deps(crate_name: str) -> list[dict]:
         data = resp.json()
 
         for version in data.get("versions", []):
-            results.append({
-                "crate": version.get("crate", version.get("num", "")),
-                "version": version.get("num", ""),
-                "description": version.get("description", ""),
-                "repository": version.get("repository", ""),
-            })
+            results.append(
+                {
+                    "crate": version.get("crate", version.get("num", "")),
+                    "version": version.get("num", ""),
+                    "description": version.get("description", ""),
+                    "repository": version.get("repository", ""),
+                }
+            )
 
         total = data.get("meta", {}).get("total", 0)
         if page * 100 >= total:
@@ -74,12 +79,20 @@ def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch
     try:
         result = subprocess.run(
             [
-                "gh", "search", "code", query,
-                "--filename", filename,
-                "--limit", "100",
-                "--json", "repository,path",
+                "gh",
+                "search",
+                "code",
+                query,
+                "--filename",
+                filename,
+                "--limit",
+                "100",
+                "--json",
+                "repository,path",
             ],
-            capture_output=True, text=True, timeout=60,
+            capture_output=True,
+            text=True,
+            timeout=60,
         )
         if result.returncode != 0:
             log.warning("gh search failed: %s", result.stderr)
@@ -127,7 +140,9 @@ def scrape_github_dependents(github_repo: str) -> list[str]:
                 repos.append(repo)
 
         # Find next page link
-        next_match = re.search(r'<a[^>]*class="[^"]*"[^>]*href="([^"]+)"[^>]*>Next</a>', html)
+        next_match = re.search(
+            r'<a[^>]*class="[^"]*"[^>]*href="([^"]+)"[^>]*>Next</a>', html
+        )
         if not next_match:
             break
         url = next_match.group(1)
@@ -135,7 +150,10 @@ def scrape_github_dependents(github_repo: str) -> list[str]:
             url = f"https://github.com{url}"
 
         if page_num > 0 and len(repos) == page_repos_before:
-            log.warning("Dependents page %d returned no new repos — HTML structure may have changed", page_num + 1)
+            log.warning(
+                "Dependents page %d returned no new repos — HTML structure may have changed",
+                page_num + 1,
+            )
             break
 
         time.sleep(SCRAPE_DELAY)
@@ -148,7 +166,9 @@ def fetch_file_content(repo: str, path: str) -> str | None:
     try:
         result = subprocess.run(
             ["gh", "api", f"repos/{repo}/contents/{path}", "--jq", ".content"],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True,
+            text=True,
+            timeout=30,
         )
         if result.returncode != 0:
             return _fetch_raw(repo, path)
@@ -163,7 +183,9 @@ def fetch_github_stars(repo: str) -> int | None:
     try:
         result = subprocess.run(
             ["gh", "api", f"repos/{repo}", "--jq", ".stargazers_count"],
-            capture_output=True, text=True, timeout=15,
+            capture_output=True,
+            text=True,
+            timeout=15,
         )
         if result.returncode == 0 and result.stdout.strip().isdigit():
             return int(result.stdout.strip())
@@ -192,11 +214,13 @@ def search_npm_dependents(package_name: str) -> list[dict]:
                 name = pkg["name"]
                 if name != package_name and name not in seen:
                     seen.add(name)
-                    dependents.append({
-                        "package": name,
-                        "description": pkg.get("description", ""),
-                        "source": "npm_registry",
-                    })
+                    dependents.append(
+                        {
+                            "package": name,
+                            "description": pkg.get("description", ""),
+                            "source": "npm_registry",
+                        }
+                    )
     except requests.RequestException as e:
         log.warning("npm registry search failed: %s", e)
 
@@ -204,12 +228,20 @@ def search_npm_dependents(package_name: str) -> list[dict]:
     try:
         result = subprocess.run(
             [
-                "gh", "search", "code", package_name,
-                "--filename", "package.json",
-                "--limit", "50",
-                "--json", "repository,path",
+                "gh",
+                "search",
+                "code",
+                package_name,
+                "--filename",
+                "package.json",
+                "--limit",
+                "50",
+                "--json",
+                "repository,path",
             ],
-            capture_output=True, text=True, timeout=60,
+            capture_output=True,
+            text=True,
+            timeout=60,
         )
         if result.returncode == 0:
             items = json.loads(result.stdout)
@@ -217,10 +249,12 @@ def search_npm_dependents(package_name: str) -> list[dict]:
                 repo = item["repository"]["nameWithOwner"]
                 if repo not in seen:
                     seen.add(repo)
-                    dependents.append({
-                        "package": repo,
-                        "source": "github_package_json",
-                    })
+                    dependents.append(
+                        {
+                            "package": repo,
+                            "source": "github_package_json",
+                        }
+                    )
     except (subprocess.TimeoutExpired, json.JSONDecodeError, FileNotFoundError) as e:
         log.warning("gh search for package.json failed: %s", e)
 
