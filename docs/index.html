@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pubky Dependants Analysis</title>
+<title>Pubky Dependents Analysis</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace; background: #fafafa; color: #1a1a1a; max-width: 960px; margin: 0 auto; padding: 1rem; }
@@ -43,18 +43,20 @@
 </head>
 <body>
 
-<h1>Pubky Dependants Analysis</h1>
+<h1>Pubky Dependents Analysis</h1>
 <p class="subtitle">Automated dependency tracking for Pubky ecosystem crates</p>
 
 <div class="tabs" id="tabs"></div>
 <div id="content"><p class="loading">Select a crate above...</p></div>
 
 <script>
-const CRATES = ["pkarr", "pubky", "pubky-app-specs"];
+const CRATES = ["pkarr", "pubky", "pubky-app-specs", "mainline", "pubky-nexus"];
 const CRATE_META = {
   "pkarr": { github: "pubky/pkarr", npm: "@synonymdev/pkarr", display: "PKARR" },
   "pubky": { github: "pubky/pubky-core", npm: "@synonymdev/pubky", rn: "@synonymdev/react-native-pubky", display: "Pubky" },
-  "pubky-app-specs": { github: "pubky/pubky-app-specs", npm: "pubky-app-specs", display: "pubky-app-specs" }
+  "pubky-app-specs": { github: "pubky/pubky-app-specs", npm: "pubky-app-specs", display: "pubky-app-specs" },
+  "mainline": { github: "pubky/mainline", display: "Mainline" },
+  "pubky-nexus": { github: "pubky/pubky-nexus", display: "Pubky Nexus" }
 };
 function displayName(crate) { return (CRATE_META[crate] && CRATE_META[crate].display) || crate; }
 const BASE = location.href.replace(/\/[^/]*$/, "");
@@ -142,7 +144,7 @@ function render(data) {
   const npmUrl = meta.npm ? `https://www.npmjs.com/package/${meta.npm}` : "#";
   const rnUrl = meta.rn ? `https://www.npmjs.com/package/${meta.rn}` : "#";
 
-  let statCards = `<a class="stat-card" href="${ghDepsUrl}" target="_blank"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">public dependants</div></a>`;
+  let statCards = `<a class="stat-card" href="${ghDepsUrl}" target="_blank"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">public dependents</div></a>`;
   if (dl) statCards += `<a class="stat-card" href="${cratesUrl}" target="_blank"><div class="stat-value">${dl.total.toLocaleString()}</div><div class="stat-label">crates.io downloads (all-time)</div><div class="stat-sub">${dl.recent.toLocaleString()} in last 90 days</div></a>`;
   if (ndl) statCards += `<a class="stat-card" href="${npmUrl}" target="_blank"><div class="stat-value">${ndl.total.toLocaleString()}</div><div class="stat-label">npm downloads (all-time)</div><div class="stat-sub">${ndl.recent.toLocaleString()} in last 30 days</div></a>`;
   if (rndl) statCards += `<a class="stat-card" href="${rnUrl}" target="_blank"><div class="stat-value">${rndl.total.toLocaleString()}</div><div class="stat-label">React Native downloads (all-time)</div><div class="stat-sub">${rndl.recent.toLocaleString()} in last 30 days</div></a>`;

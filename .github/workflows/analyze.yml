@@ -1,4 +1,4 @@
-name: Analyze Dependants
+name: Analyze Dependents
 
 on:
   schedule:

@@ -217,7 +217,7 @@ def categorize(
             result["direct"].append(entry)
             continue
 
-        # Use the chain to find which direct dependant of target_crate
+        # Use the chain to find which direct dependent of target_crate
         # this repo goes through.
         if target_crate in repo.chain:
             idx = repo.chain.index(target_crate)

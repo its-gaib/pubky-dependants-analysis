@@ -69,7 +69,7 @@ def test_worldcoin_chain_to_pkarr():
 
 def test_chain_identifies_direct_pkarr_parent():
     """In all transitive cases, the crate immediately before pkarr
-    in the chain should be a known direct dependant."""
+    in the chain should be a known direct dependent."""
     for fixture in [
         "moq_cargo_lock.toml",
         "holochain_cargo_lock.toml",

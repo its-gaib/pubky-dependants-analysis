@@ -1,4 +1,4 @@
-"""Fetch dependant data from crates.io, GitHub search, and GitHub dependents page."""
+"""Fetch dependent data from crates.io, GitHub search, and GitHub dependents page."""
 
 import base64
 import html as html_mod

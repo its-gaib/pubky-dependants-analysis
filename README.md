@@ -1,4 +1,4 @@
-# Pubky Dependants Analysis
+# Pubky Dependents Analysis
 
 Automated weekly analysis of which projects depend on Pubky ecosystem crates, how they depend on them, and through which intermediary.
 
