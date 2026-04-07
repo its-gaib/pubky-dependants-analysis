@@ -10,6 +10,7 @@ from pathlib import Path
 
 from classify import (
     CategorizedEntry,
+    Classification,
     RepoAnalysis,
     categorize,
     classify_cargo_toml,
@@ -159,18 +160,18 @@ def _classify_repo(
     chain: list[str] = []
 
     # Try Cargo.toml first
-    if match.cargo_toml_paths:
-        for toml_path in match.cargo_toml_paths:
-            content = fetch_file_content(repo_name, toml_path)
-            if content:
-                result = classify_cargo_toml(content, target_crate)
-                if result and result.kind == "direct":
-                    classification = result
-                    crate_name = _extract_crate_name(content)
-                    chain = [crate_name or repo_name.split("/")[-1], target_crate]
-                    break
-                elif result and result.kind == "feature_flag" and not classification:
-                    classification = result
+    toml_paths = match.cargo_toml_paths or ["Cargo.toml"]
+    for toml_path in toml_paths:
+        content = fetch_file_content(repo_name, toml_path)
+        if content:
+            result = classify_cargo_toml(content, target_crate)
+            if result and result.kind == "direct":
+                classification = result
+                crate_name = _extract_crate_name(content)
+                chain = [crate_name or repo_name.split("/")[-1], target_crate]
+                break
+            elif result and result.kind == "feature_flag" and not classification:
+                classification = result
 
     # If not direct, try Cargo.lock for chain tracing
     if not classification or classification.kind != "direct":
@@ -181,6 +182,10 @@ def _classify_repo(
                 chains = trace_chains(content, target_crate)
                 if chains:
                     chain = min(chains, key=len)
+                    # Chain of length 2 means a root crate directly
+                    # depends on target (no intermediary).
+                    if len(chain) == 2 and not classification:
+                        classification = Classification(kind="direct")
                     break
 
     if not classification and not chain:

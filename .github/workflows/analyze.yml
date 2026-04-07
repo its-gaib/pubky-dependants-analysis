@@ -26,7 +26,17 @@ jobs:
       - name: Run analysis
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python analyze.py
+        run: python analyze.py 2>&1 | tee analysis.log
+      - name: Check for API cap
+        run: |
+          if grep -q 'hit the 1000-result API cap' analysis.log; then
+            echo "ERROR: GitHub code search returned 1000 results (the API maximum)."
+            echo "Some dependents are likely missing from the analysis."
+            echo "Fix: split the gh search query in sources.py to stay under the cap."
+            echo ""
+            grep 'hit the 1000-result API cap' analysis.log
+            exit 1
+          fi
       - name: Commit & push results
         run: |
           git config user.name "github-actions[bot]"

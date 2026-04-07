@@ -140,7 +140,7 @@ def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch
         "--filename",
         filename,
         "--limit",
-        "100",
+        "1000",
         "--json",
         "repository,path",
     ]
@@ -178,6 +178,13 @@ def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch
     else:
         log.warning("gh search failed after %d retries", GH_SEARCH_MAX_RETRIES)
         return []
+
+    if len(items) >= 1000:
+        log.warning(
+            "gh search for %s in %s hit the 1000-result API cap — results may be incomplete",
+            query,
+            filename,
+        )
 
     repo_map: dict[str, RepoMatch] = {}
     for item in items:
