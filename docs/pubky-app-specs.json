@@ -1,6 +1,6 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-04-07T05:48:44.243213+00:00",
+  "updated_at": "2026-04-07T18:24:41.980765+00:00",
   "total": 4,
   "summary": {
     "direct": 4
@@ -49,12 +49,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 8248,
-    "recent": 388
+    "total": 8249,
+    "recent": 389
   },
   "npm_downloads": {
-    "total": 11400,
-    "recent": 1918
+    "total": 11536,
+    "recent": 2044
   },
   "npm_dependents": [
     {
@@ -73,8 +73,18 @@
       "source": "npm_registry"
     },
     {
+      "package": "oidc-provider",
+      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
+      "source": "npm_registry"
+    },
+    {
       "package": "device-specs",
       "description": "A list of devices that can be emulated using Chrome DevTools.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "cypress-split",
+      "description": "Split Cypress specs across parallel CI machines for speed",
       "source": "npm_registry"
     },
     {
@@ -85,16 +95,6 @@
     {
       "package": "cypress-repeat",
       "description": "Run Cypress multiple times in a row",
-      "source": "npm_registry"
-    },
-    {
-      "package": "oidc-provider",
-      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
-      "source": "npm_registry"
-    },
-    {
-      "package": "cypress-split",
-      "description": "Split Cypress specs across parallel CI machines for speed",
       "source": "npm_registry"
     },
     {
@@ -153,18 +153,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "graphology",
-      "description": "A robust and multipurpose Graph object for JavaScript.",
-      "source": "npm_registry"
-    },
-    {
       "package": "css-shorthand-properties",
       "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@microsoft/agents-activity",
-      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
       "source": "npm_registry"
     },
     {
@@ -173,13 +163,23 @@
       "source": "npm_registry"
     },
     {
+      "package": "json-joy",
+      "description": "Collection of libraries for building collaborative editing apps.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "graphology",
+      "description": "A robust and multipurpose Graph object for JavaScript.",
+      "source": "npm_registry"
+    },
+    {
       "package": "@webcomponents/custom-elements",
       "description": "HTML Custom Elements Polyfill",
       "source": "npm_registry"
     },
     {
-      "package": "json-joy",
-      "description": "Collection of libraries for building collaborative editing apps.",
+      "package": "@microsoft/agents-activity",
+      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
       "source": "npm_registry"
     },
     {
@@ -193,8 +193,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "elm-spec-runner",
-      "description": "Node CLI for Elm-Spec",
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
     },
     {
@@ -203,28 +203,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
-      "source": "npm_registry"
-    },
-    {
       "package": "officecrypto-tool",
       "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
       "source": "npm_registry"
     },
     {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "package": "elm-spec-runner",
+      "description": "Node CLI for Elm-Spec",
       "source": "npm_registry"
     },
     {
-      "package": "libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@asyncapi/specs",
-      "description": "AsyncAPI schema versions",
+      "package": "@perma/map",
+      "description": "Immutable hash maps implemented as hash array papped tries",
       "source": "npm_registry"
     },
     {
@@ -238,23 +228,23 @@
       "source": "npm_registry"
     },
     {
-      "package": "@azure/oad",
-      "description": "OpenApi Specification Diff tool",
+      "package": "@darwinia/types-known",
+      "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
       "source": "npm_registry"
     },
     {
-      "package": "applicationinsights",
-      "description": "Microsoft Application Insights module for Node.js",
+      "package": "@asyncapi/specs",
+      "description": "AsyncAPI schema versions",
       "source": "npm_registry"
     },
     {
-      "package": "@perma/map",
-      "description": "Immutable hash maps implemented as hash array papped tries",
+      "package": "libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
     },
     {
-      "package": "@azure/avocado",
-      "description": "A validator of OpenAPI configurations",
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
       "source": "npm_registry"
     },
     {
@@ -263,13 +253,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@darwinia/types-known",
-      "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@markuplint/vue-spec",
-      "description": "Extended specification for tags and attributes in Vue",
+      "package": "applicationinsights",
+      "description": "Microsoft Application Insights module for Node.js",
       "source": "npm_registry"
     },
     {
@@ -278,13 +263,23 @@
       "source": "npm_registry"
     },
     {
+      "package": "@azure/oad",
+      "description": "OpenApi Specification Diff tool",
+      "source": "npm_registry"
+    },
+    {
       "package": "aws-cron-parser",
       "description": "A util to parse cron expressions used by AWS services",
       "source": "npm_registry"
     },
     {
-      "package": "@withfig/autocomplete",
-      "description": "Fig Autocomplete Specs",
+      "package": "@azure/avocado",
+      "description": "A validator of OpenAPI configurations",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@markuplint/vue-spec",
+      "description": "Extended specification for tags and attributes in Vue",
       "source": "npm_registry"
     },
     {
@@ -293,14 +288,47 @@
       "source": "npm_registry"
     },
     {
+      "package": "@typespec/spector",
+      "description": "Typespec Core Tool to validate, run mock api, collect coverage.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@grafana/openapi",
+      "description": "Grafana OpenApi Library",
+      "source": "npm_registry"
+    },
+    {
       "package": "cypress-cucumber-preprocessor",
       "description": "Run gherkin-syntaxed specs with cypress.io",
       "source": "npm_registry"
     },
     {
-      "package": "@libp2p/gossipsub",
-      "description": "A typescript implementation of gossipsub",
-      "source": "npm_registry"
+      "package": "pubky/pubky-app-specs",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/eventky",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-roadmap",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-homeserver",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-ical-poc",
+      "source": "github_package_json"
     }
   ]
 }
