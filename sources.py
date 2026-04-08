@@ -21,8 +21,8 @@ CRATES_IO_DELAY = 1  # seconds between crates.io requests
 SCRAPE_DELAY = 2  # seconds between dependents page requests
 SCRAPE_MAX_RETRIES = 3  # retries per page on failure
 GH_SEARCH_DELAY = 5  # seconds to wait before each gh search code call
-GH_SEARCH_MAX_RETRIES = 3  # retries on 429
-GH_SEARCH_BACKOFF = 30  # initial backoff seconds on 429, doubles each retry
+GH_RATE_LIMIT_BACKOFF = 30  # initial backoff seconds on rate limit, doubles each retry
+GH_RATE_LIMIT_MAX_BACKOFF = 600  # cap backoff at 10 minutes
 
 
 @dataclass
@@ -128,10 +128,71 @@ def search_github_cargo_lock(crate_name: str) -> list[RepoMatch]:
     return _gh_search_code(crate_name, "Cargo.lock", "cargo_lock_paths")
 
 
-def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch]:
-    """Run gh search code and return RepoMatch objects, with retry on 429."""
-    time.sleep(GH_SEARCH_DELAY)  # pre-delay to avoid hitting rate limit
+def _is_gh_rate_limited(result: subprocess.CompletedProcess) -> bool:
+    """Check if a gh CLI result indicates a rate limit (HTTP 429 or 403 abuse)."""
+    combined = (result.stderr or "") + (result.stdout or "")
+    if "429" in combined:
+        return True
+    if "abuse" in combined.lower() or "rate limit" in combined.lower():
+        return True
+    if "secondary rate limit" in combined.lower():
+        return True
+    return False
 
+
+def _run_gh(
+    cmd: list[str], *, timeout: int = 60, pre_delay: float = 0
+) -> subprocess.CompletedProcess | None:
+    """Run a gh CLI command, retrying indefinitely on rate limits.
+
+    Returns the successful CompletedProcess, or None on non-rate-limit errors.
+    """
+    if pre_delay > 0:
+        time.sleep(pre_delay)
+
+    attempt = 0
+    while True:
+        try:
+            result = subprocess.run(
+                cmd, capture_output=True, text=True, timeout=timeout
+            )
+            if result.returncode == 0:
+                return result
+            if _is_gh_rate_limited(result):
+                attempt += 1
+                backoff = min(
+                    GH_RATE_LIMIT_BACKOFF * (2 ** (attempt - 1)),
+                    GH_RATE_LIMIT_MAX_BACKOFF,
+                )
+                log.warning(
+                    "gh rate limited (attempt %d), retrying in %ds...",
+                    attempt,
+                    backoff,
+                )
+                time.sleep(backoff)
+                continue
+            log.warning("gh command failed: %s", result.stderr.strip())
+            return None
+        except subprocess.TimeoutExpired:
+            attempt += 1
+            backoff = min(
+                GH_RATE_LIMIT_BACKOFF * (2 ** (attempt - 1)),
+                GH_RATE_LIMIT_MAX_BACKOFF,
+            )
+            log.warning(
+                "gh command timed out (attempt %d), retrying in %ds...",
+                attempt,
+                backoff,
+            )
+            time.sleep(backoff)
+            continue
+        except FileNotFoundError:
+            log.warning("gh CLI not found")
+            return None
+
+
+def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch]:
+    """Run gh search code and return RepoMatch objects, with retry on rate limit."""
     cmd = [
         "gh",
         "search",
@@ -145,38 +206,14 @@ def _gh_search_code(query: str, filename: str, path_attr: str) -> list[RepoMatch
         "repository,path",
     ]
 
-    for attempt in range(GH_SEARCH_MAX_RETRIES):
-        try:
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=60,
-            )
-            if result.returncode == 0:
-                items = json.loads(result.stdout)
-                break
-            if "429" in result.stderr:
-                backoff = GH_SEARCH_BACKOFF * (2**attempt)
-                log.warning(
-                    "gh search rate limited (attempt %d/%d), retrying in %ds...",
-                    attempt + 1,
-                    GH_SEARCH_MAX_RETRIES,
-                    backoff,
-                )
-                time.sleep(backoff)
-                continue
-            log.warning("gh search failed: %s", result.stderr.strip())
-            return []
-        except (
-            subprocess.TimeoutExpired,
-            json.JSONDecodeError,
-            FileNotFoundError,
-        ) as e:
-            log.warning("gh search error: %s", e)
-            return []
-    else:
-        log.warning("gh search failed after %d retries", GH_SEARCH_MAX_RETRIES)
+    result = _run_gh(cmd, timeout=60, pre_delay=GH_SEARCH_DELAY)
+    if result is None:
+        return []
+
+    try:
+        items = json.loads(result.stdout)
+    except json.JSONDecodeError as e:
+        log.warning("gh search JSON parse error: %s", e)
         return []
 
     if len(items) >= 1000:
@@ -264,16 +301,14 @@ def _scrape_dependents_pages(start_url: str, github_repo: str) -> list[str]:
 
 def fetch_file_content(repo: str, path: str) -> str | None:
     """Fetch a file from a GitHub repo via the API."""
-    try:
-        result = subprocess.run(
-            ["gh", "api", f"repos/{repo}/contents/{path}", "--jq", ".content"],
-            capture_output=True,
-            text=True,
-            timeout=30,
-        )
-        if result.returncode != 0:
-            return _fetch_raw(repo, path)
+    result = _run_gh(
+        ["gh", "api", f"repos/{repo}/contents/{path}", "--jq", ".content"],
+        timeout=30,
+    )
+    if result is None:
+        return _fetch_raw(repo, path)
 
+    try:
         return base64.b64decode(result.stdout.strip()).decode("utf-8", errors="replace")
     except Exception:
         return _fetch_raw(repo, path)
@@ -281,17 +316,12 @@ def fetch_file_content(repo: str, path: str) -> str | None:
 
 def fetch_github_stars(repo: str) -> int | None:
     """Fetch the star count for a GitHub repo."""
-    try:
-        result = subprocess.run(
-            ["gh", "api", f"repos/{repo}", "--jq", ".stargazers_count"],
-            capture_output=True,
-            text=True,
-            timeout=15,
-        )
-        if result.returncode == 0 and result.stdout.strip().isdigit():
-            return int(result.stdout.strip())
-    except (subprocess.TimeoutExpired, FileNotFoundError):
-        pass
+    result = _run_gh(
+        ["gh", "api", f"repos/{repo}", "--jq", ".stargazers_count"],
+        timeout=15,
+    )
+    if result is not None and result.stdout.strip().isdigit():
+        return int(result.stdout.strip())
     return None
 
 
@@ -326,25 +356,24 @@ def search_npm_dependents(package_name: str) -> list[dict]:
         log.warning("npm registry search failed: %s", e)
 
     # Source 2: GitHub code search for package.json references
-    try:
-        result = subprocess.run(
-            [
-                "gh",
-                "search",
-                "code",
-                package_name,
-                "--filename",
-                "package.json",
-                "--limit",
-                "50",
-                "--json",
-                "repository,path",
-            ],
-            capture_output=True,
-            text=True,
-            timeout=60,
-        )
-        if result.returncode == 0:
+    result = _run_gh(
+        [
+            "gh",
+            "search",
+            "code",
+            package_name,
+            "--filename",
+            "package.json",
+            "--limit",
+            "50",
+            "--json",
+            "repository,path",
+        ],
+        timeout=60,
+        pre_delay=GH_SEARCH_DELAY,
+    )
+    if result is not None:
+        try:
             items = json.loads(result.stdout)
             for item in items:
                 repo = item["repository"]["nameWithOwner"]
@@ -356,8 +385,8 @@ def search_npm_dependents(package_name: str) -> list[dict]:
                             "source": "github_package_json",
                         }
                     )
-    except (subprocess.TimeoutExpired, json.JSONDecodeError, FileNotFoundError) as e:
-        log.warning("gh search for package.json failed: %s", e)
+        except json.JSONDecodeError as e:
+            log.warning("gh search for package.json JSON parse error: %s", e)
 
     return dependents
 
