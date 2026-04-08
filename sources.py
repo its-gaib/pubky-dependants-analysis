@@ -171,7 +171,7 @@ def _run_gh(
                 )
                 time.sleep(backoff)
                 continue
-            log.warning("gh command failed: %s", result.stderr.strip())
+            log.debug("gh command failed: %s", result.stderr.strip())
             return None
         except subprocess.TimeoutExpired:
             attempt += 1
