@@ -1,6 +1,6 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-04-13T09:42:41.697541+00:00",
+  "updated_at": "2026-04-20T08:48:22.274377+00:00",
   "total": 5,
   "summary": {
     "direct": 5
@@ -58,12 +58,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 8268,
-    "recent": 396
+    "total": 8293,
+    "recent": 403
   },
   "npm_downloads": {
-    "total": 12345,
-    "recent": 2797
+    "total": 12482,
+    "recent": 2856
   },
   "npm_dependents": [
     {
@@ -122,13 +122,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "package": "expo-updates",
+      "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
       "source": "npm_registry"
     },
     {
-      "package": "expo-updates",
-      "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -162,8 +162,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@polkadot/types-known",
-      "description": "Known type definitions",
+      "package": "css-shorthand-properties",
+      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
       "source": "npm_registry"
     },
     {
@@ -172,13 +172,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "css-shorthand-properties",
-      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
-      "source": "npm_registry"
-    },
-    {
-      "package": "grunt-contrib-jasmine",
-      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "package": "@polkadot/types-known",
+      "description": "Known type definitions",
       "source": "npm_registry"
     },
     {
@@ -187,8 +182,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@microsoft/agents-activity",
-      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
+      "package": "@replit/oidc-provider",
+      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
       "source": "npm_registry"
     },
     {
@@ -197,13 +192,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@replit/oidc-provider",
-      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@atproto/syntax",
-      "description": "Validation for atproto identifiers and formats: DID, handle, NSID, AT URI, etc",
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
     },
     {
@@ -212,28 +202,23 @@
       "source": "npm_registry"
     },
     {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
+      "package": "@microsoft/agents-activity",
+      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@atproto/syntax",
+      "description": "Validation for atproto identifiers and formats: DID, handle, NSID, AT URI, etc",
+      "source": "npm_registry"
+    },
+    {
+      "package": "grunt-contrib-jasmine",
+      "description": "Run jasmine specs headlessly through Headless Chrome",
       "source": "npm_registry"
     },
     {
       "package": "@markuplint/react-spec",
       "description": "Extended specification for tags and attributes in React",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
-      "source": "npm_registry"
-    },
-    {
-      "package": "officecrypto-tool",
-      "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@asyncapi/specs",
-      "description": "AsyncAPI schema versions",
       "source": "npm_registry"
     },
     {
@@ -247,8 +232,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "applicationinsights",
-      "description": "Microsoft Application Insights module for Node.js",
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@asyncapi/specs",
+      "description": "AsyncAPI schema versions",
       "source": "npm_registry"
     },
     {
@@ -257,13 +247,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "pwa-asset-generator",
-      "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
+      "package": "applicationinsights",
+      "description": "Microsoft Application Insights module for Node.js",
       "source": "npm_registry"
     },
     {
-      "package": "@darwinia/types-known",
-      "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
+      "package": "officecrypto-tool",
+      "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "pwa-asset-generator",
+      "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
       "source": "npm_registry"
     },
     {
@@ -272,18 +267,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@azure/avocado",
-      "description": "A validator of OpenAPI configurations",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@elastic/opentelemetry-node",
-      "description": "Elastic Distribution of OpenTelemetry Node.js (EDOT Node.js)",
-      "source": "npm_registry"
-    },
-    {
       "package": "aws-cron-parser",
       "description": "A util to parse cron expressions used by AWS services",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@darwinia/types-known",
+      "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@azure/avocado",
+      "description": "A validator of OpenAPI configurations",
       "source": "npm_registry"
     },
     {
@@ -292,8 +287,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@markuplint/vue-spec",
-      "description": "Extended specification for tags and attributes in Vue",
+      "package": "@elastic/opentelemetry-node",
+      "description": "Elastic Distribution of OpenTelemetry Node.js (EDOT Node.js)",
       "source": "npm_registry"
     },
     {
@@ -307,8 +302,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "cypress-cucumber-preprocessor",
-      "description": "Run gherkin-syntaxed specs with cypress.io",
+      "package": "@markuplint/vue-spec",
+      "description": "Extended specification for tags and attributes in Vue",
+      "source": "npm_registry"
+    },
+    {
+      "package": "openspec-playwright",
+      "description": "OpenSpec + Playwright E2E verification setup tool for Claude Code",
       "source": "npm_registry"
     },
     {
