@@ -1,6 +1,6 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-07-20T10:02:09.602215+00:00",
+  "updated_at": "2026-07-27T10:20:58.729484+00:00",
   "total": 7,
   "summary": {
     "direct": 7
@@ -64,8 +64,8 @@
           "pubky-nexus",
           "pubky-app-specs"
         ],
-        "stars": 20,
-        "version": "0.6.1",
+        "stars": 21,
+        "version": "0.6.2",
         "features": [
           "openapi"
         ]
@@ -82,12 +82,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 9648,
-    "recent": 1357
+    "total": 9722,
+    "recent": 1050
   },
   "npm_downloads": {
-    "total": 25119,
-    "recent": 3997
+    "total": 25994,
+    "recent": 4232
   },
   "npm_dependents": [
     {
@@ -101,11 +101,6 @@
       "source": "npm_registry"
     },
     {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
-      "source": "npm_registry"
-    },
-    {
       "package": "setimmediate",
       "description": "A shim for the setImmediate efficient script yielding API",
       "source": "npm_registry"
@@ -113,6 +108,11 @@
     {
       "package": "@synonymdev/pubky",
       "description": "Pubky client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -131,13 +131,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "cypress-repeat",
-      "description": "Run Cypress multiple times in a row",
+      "package": "@metamask/api-specs",
+      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
       "source": "npm_registry"
     },
     {
-      "package": "@metamask/api-specs",
-      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
+      "package": "cypress-repeat",
+      "description": "Run Cypress multiple times in a row",
       "source": "npm_registry"
     },
     {
@@ -148,11 +148,6 @@
     {
       "package": "expo-updates",
       "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@withfig/autocomplete",
-      "description": "Fig Autocomplete Specs",
       "source": "npm_registry"
     },
     {
@@ -206,18 +201,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@polkadot/types-known",
-      "description": "Known type definitions",
-      "source": "npm_registry"
-    },
-    {
       "package": "@scalar/helpers",
       "description": "A collection of dependency free helpers",
-      "source": "npm_registry"
-    },
-    {
-      "package": "css-shorthand-properties",
-      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
       "source": "npm_registry"
     },
     {
@@ -226,8 +211,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/types",
-      "description": "Types to work with Scalar packages",
+      "package": "@polkadot/types-known",
+      "description": "Known type definitions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "css-shorthand-properties",
+      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@withfig/autocomplete",
+      "description": "Fig Autocomplete Specs",
       "source": "npm_registry"
     },
     {
@@ -236,8 +231,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "instantsearch.css",
-      "description": "InstantSearch.css is a CSS library to style InstantSearch-powered search experiences.",
+      "package": "@scalar/types",
+      "description": "Types to work with Scalar packages",
       "source": "npm_registry"
     },
     {
@@ -246,8 +241,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@microsoft/agents-activity",
-      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
+      "package": "instantsearch.css",
+      "description": "InstantSearch.css is a CSS library to style InstantSearch-powered search experiences.",
       "source": "npm_registry"
     },
     {
@@ -256,43 +251,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "applicationinsights",
-      "description": "Microsoft Application Insights module for Node.js",
-      "source": "npm_registry"
-    },
-    {
-      "package": "datocms-structured-text-utils",
-      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@asyncapi/specs",
-      "description": "AsyncAPI schema versions",
-      "source": "npm_registry"
-    },
-    {
-      "package": "pwa-asset-generator",
-      "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@fig/autocomplete-helpers",
-      "description": "Helper functions for fig completion specs",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@scalar/schemas",
-      "description": "Schemas for Scalar packages",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "package": "@microsoft/agents-activity",
+      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
       "source": "npm_registry"
     },
     {
@@ -301,13 +261,43 @@
       "source": "npm_registry"
     },
     {
-      "package": "@markuplint/react-spec",
-      "description": "Extended specification for tags and attributes in React",
+      "package": "applicationinsights",
+      "description": "Microsoft Application Insights module for Node.js",
       "source": "npm_registry"
     },
     {
-      "package": "grunt-contrib-jasmine",
-      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "package": "@asyncapi/specs",
+      "description": "AsyncAPI schema versions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
+      "source": "npm_registry"
+    },
+    {
+      "package": "pwa-asset-generator",
+      "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "datocms-structured-text-utils",
+      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/schemas",
+      "description": "Schemas for Scalar packages",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@markuplint/react-spec",
+      "description": "Extended specification for tags and attributes in React",
       "source": "npm_registry"
     },
     {
@@ -326,8 +316,18 @@
       "source": "npm_registry"
     },
     {
+      "package": "grunt-contrib-jasmine",
+      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "source": "npm_registry"
+    },
+    {
       "package": "@metamask/multichain-api-middleware",
       "description": "JSON-RPC methods and middleware to support the MetaMask Multichain API",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@fig/autocomplete-helpers",
+      "description": "Helper functions for fig completion specs",
       "source": "npm_registry"
     },
     {
@@ -344,11 +344,19 @@
       "source": "github_package_json"
     },
     {
+      "package": "yethikrishna/varsha_v1",
+      "source": "github_package_json"
+    },
+    {
       "package": "gillohner/pubky-ical-poc",
       "source": "github_package_json"
     },
     {
       "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/agent-skills",
       "source": "github_package_json"
     },
     {

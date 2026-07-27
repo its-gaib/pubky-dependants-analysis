@@ -1,6 +1,6 @@
 {
   "crate": "http-relay",
-  "updated_at": "2026-07-20T10:22:28.969084+00:00",
+  "updated_at": "2026-07-27T10:33:22.056932+00:00",
   "total": 8,
   "summary": {
     "pubky-testnet": 5,
@@ -43,7 +43,7 @@
           "pubky-testnet",
           "http-relay"
         ],
-        "stars": 20
+        "stars": 21
       },
       {
         "repo": "pubky/pubky-noise",
@@ -62,7 +62,7 @@
           "paykit-sdk",
           "http-relay"
         ],
-        "stars": 4,
+        "stars": 5,
         "version": "0.7.0",
         "features": [
           "server"
@@ -75,7 +75,7 @@
           "pubky-core",
           "http-relay"
         ],
-        "stars": 82,
+        "stars": 84,
         "version": "0.7"
       }
     ],
@@ -88,7 +88,7 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 8711,
-    "recent": 2203
+    "total": 8945,
+    "recent": 1898
   }
 }

@@ -1,14 +1,15 @@
 {
   "crate": "mainline",
-  "updated_at": "2026-07-20T10:21:24.235103+00:00",
-  "total": 240,
+  "updated_at": "2026-07-27T10:29:23.695376+00:00",
+  "total": 248,
   "summary": {
-    "pkarr": 166,
-    "direct": 52,
+    "pkarr": 167,
+    "direct": 57,
     "distributed-topic-tracker": 7,
     "iroh": 2,
     "gosh-dl": 3,
-    "federation-net": 1,
+    "federation-net": 2,
+    "iroh-gossip-rendezvous": 1,
     "unknown": 2,
     "mosaic-core": 1,
     "pubky-testnet": 5,
@@ -259,7 +260,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 94
+        "stars": 97
       },
       {
         "repo": "Onyx-Void-Labs/onyx-legacy",
@@ -399,16 +400,6 @@
           "irohping",
           "iroh",
           "iroh-net",
-          "pkarr",
-          "mainline"
-        ],
-        "stars": 0
-      },
-      {
-        "repo": "ahmed-crt9/rust--stm32",
-        "chain": [
-          "communication3",
-          "iroh",
           "pkarr",
           "mainline"
         ],
@@ -631,6 +622,17 @@
         "stars": 1
       },
       {
+        "repo": "douglaz/lnrent",
+        "chain": [
+          "lnrentd",
+          "fedimint-connectors",
+          "iroh",
+          "pkarr",
+          "mainline"
+        ],
+        "stars": 1
+      },
+      {
         "repo": "dpc/rostra",
         "chain": [
           "rostra-client",
@@ -794,7 +796,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 304
+        "stars": 305
       },
       {
         "repo": "fishfolk/jumpy",
@@ -805,7 +807,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 1863
+        "stars": 1865
       },
       {
         "repo": "frankhinek/simple-fedimint-wallet",
@@ -1093,6 +1095,17 @@
         "stars": 0
       },
       {
+        "repo": "madhanio/flick",
+        "chain": [
+          "flick_core",
+          "iroh",
+          "iroh-net",
+          "pkarr",
+          "mainline"
+        ],
+        "stars": 0
+      },
+      {
         "repo": "meliosu/p2p",
         "chain": [
           "peer2peer",
@@ -1120,7 +1133,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 210
+        "stars": 211
       },
       {
         "repo": "n0-computer/iroh-workshop-39c3",
@@ -1202,7 +1215,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 46
+        "stars": 48
       },
       {
         "repo": "overspend1/oversync",
@@ -1261,7 +1274,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 8
+        "stars": 9
       },
       {
         "repo": "pubky/pubky-core",
@@ -1270,7 +1283,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 82
+        "stars": 84
       },
       {
         "repo": "pubky/pubky-core-ffi",
@@ -1280,7 +1293,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 2
+        "stars": 3
       },
       {
         "repo": "pubky/pubky-knowledge-base-v2",
@@ -1290,7 +1303,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 0
+        "stars": 1
       },
       {
         "repo": "pubky/pubky-tls-proxy",
@@ -1320,7 +1333,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 63
+        "stars": 69
       },
       {
         "repo": "reaudito/iroh-api",
@@ -1535,7 +1548,7 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 38599
+        "stars": 38657
       },
       {
         "repo": "sunbeamdotpt/marathon",
@@ -1607,9 +1620,8 @@
       {
         "repo": "tvolk131/fedimint-lnv2-remote-client",
         "chain": [
-          "fedimint-cli",
-          "fedimint-connectors",
-          "iroh",
+          "fedimintd",
+          "fedimint-server",
           "pkarr",
           "mainline"
         ],
@@ -1812,7 +1824,7 @@
           "vortex-cli",
           "mainline"
         ],
-        "stars": 135,
+        "stars": 136,
         "version": "6",
         "features": [
           "node"
@@ -1825,7 +1837,7 @@
           "oku-core",
           "mainline"
         ],
-        "stars": 207,
+        "stars": 208,
         "version": "7.0.0",
         "features": [
           "async"
@@ -1898,7 +1910,7 @@
       {
         "repo": "brittonr/aspen",
         "chain": [
-          "aspen-dht-discovery",
+          "aspen-federation",
           "mainline"
         ],
         "stars": 9,
@@ -1926,6 +1938,22 @@
         ],
         "stars": 1,
         "version": "6.0.1"
+      },
+      {
+        "repo": "douglaz/fedimint-wallets",
+        "chain": [
+          "pkarr",
+          "mainline"
+        ],
+        "stars": 0
+      },
+      {
+        "repo": "elsiribot/usdt-demo-wallet",
+        "chain": [
+          "pkarr",
+          "mainline"
+        ],
+        "stars": 0
       },
       {
         "repo": "fedimint/ecash-app",
@@ -1958,7 +1986,7 @@
           "iroh-direct-spike",
           "mainline"
         ],
-        "stars": 117,
+        "stars": 122,
         "version": "6"
       },
       {
@@ -1967,7 +1995,7 @@
           "gosh-dl",
           "mainline"
         ],
-        "stars": 27,
+        "stars": 28,
         "version": "6.1.0",
         "optional": true
       },
@@ -1992,12 +2020,21 @@
         "optional": true
       },
       {
+        "repo": "house-of-vanity/frid",
+        "chain": [
+          "frid",
+          "mainline"
+        ],
+        "stars": 0,
+        "version": "7"
+      },
+      {
         "repo": "hyprstream/hyprstream",
         "chain": [
           "hyprstream-p2p",
           "mainline"
         ],
-        "stars": 116,
+        "stars": 118,
         "version": "7.0"
       },
       {
@@ -2081,8 +2118,17 @@
           "mediafusion-api",
           "mainline"
         ],
-        "stars": 911,
+        "stars": 912,
         "version": "7"
+      },
+      {
+        "repo": "michaelbeaumont/oidc-issuer-config-sync",
+        "chain": [
+          "oidc-issuer-config-sync",
+          "mainline"
+        ],
+        "stars": 0,
+        "version": "7.0.0"
       },
       {
         "repo": "mikedilger/mosaic-core",
@@ -2102,8 +2148,17 @@
           "iroh-dns-server",
           "mainline"
         ],
-        "stars": 11769,
+        "stars": 11860,
         "version": "7"
+      },
+      {
+        "repo": "ontola/atomic-server",
+        "chain": [
+          "atomic-server",
+          "mainline"
+        ],
+        "stars": 1583,
+        "version": "6.2.0"
       },
       {
         "repo": "paltaio/enlace",
@@ -2119,8 +2174,8 @@
           "pkarr",
           "mainline"
         ],
-        "stars": 435,
-        "version": "7.0.0",
+        "stars": 439,
+        "version": "7",
         "features": [
           "async"
         ],
@@ -2142,7 +2197,7 @@
           "distributed-topic-tracker",
           "mainline"
         ],
-        "stars": 37,
+        "stars": 38,
         "version": "7",
         "features": [
           "async"
@@ -2155,7 +2210,7 @@
           "slskr",
           "mainline"
         ],
-        "stars": 11,
+        "stars": 12,
         "version": "7"
       },
       {
@@ -2176,7 +2231,7 @@
           "tunnet-core",
           "mainline"
         ],
-        "stars": 47,
+        "stars": 52,
         "version": "7",
         "optional": true
       },
@@ -2243,7 +2298,7 @@
       {
         "repo": "developing-today/code",
         "chain": [
-          "id",
+          "dht",
           "distributed-topic-tracker",
           "mainline"
         ],
@@ -2265,7 +2320,7 @@
           "distributed-topic-tracker",
           "mainline"
         ],
-        "stars": 208
+        "stars": 210
       }
     ],
     "iroh": [
@@ -2319,11 +2374,32 @@
     ],
     "federation-net": [
       {
+        "repo": "house-of-vanity/furumi_tui",
+        "chain": [
+          "furumi_tui",
+          "music-dht",
+          "federation-net",
+          "mainline"
+        ],
+        "stars": 2
+      },
+      {
         "repo": "house-of-vanity/furumusic",
         "chain": [
           "furumusic",
           "music-dht",
           "federation-net",
+          "mainline"
+        ],
+        "stars": 0
+      }
+    ],
+    "iroh-gossip-rendezvous": [
+      {
+        "repo": "kerryhatcher/hatchchat",
+        "chain": [
+          "hatch-chat",
+          "iroh-gossip-rendezvous",
           "mainline"
         ],
         "stars": 0
@@ -2364,7 +2440,7 @@
           "pubky-testnet",
           "mainline"
         ],
-        "stars": 4
+        "stars": 5
       },
       {
         "repo": "pubky/pubky-backup",
@@ -2391,7 +2467,7 @@
           "pubky-testnet",
           "mainline"
         ],
-        "stars": 20
+        "stars": 21
       },
       {
         "repo": "pubky/pubky-noise",
@@ -2416,7 +2492,7 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 378559,
-    "recent": 124177
+    "total": 389042,
+    "recent": 125325
   }
 }
