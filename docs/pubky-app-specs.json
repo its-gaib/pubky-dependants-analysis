@@ -1,6 +1,6 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-07-27T10:20:58.729484+00:00",
+  "updated_at": "2026-08-10T09:42:59.837220+00:00",
   "total": 7,
   "summary": {
     "direct": 7
@@ -64,8 +64,8 @@
           "pubky-nexus",
           "pubky-app-specs"
         ],
-        "stars": 21,
-        "version": "0.6.2",
+        "stars": 22,
+        "version": "0.7.0",
         "features": [
           "openapi"
         ]
@@ -82,17 +82,22 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 9722,
-    "recent": 1050
+    "total": 9876,
+    "recent": 1120
   },
   "npm_downloads": {
-    "total": 25994,
-    "recent": 4232
+    "total": 27743,
+    "recent": 3880
   },
   "npm_dependents": [
     {
       "package": "find-cypress-specs",
       "description": "Find Cypress spec files using the config settings",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/pubky",
+      "description": "Decentralized identity, auth flows, and user-owned storage",
       "source": "npm_registry"
     },
     {
@@ -103,16 +108,6 @@
     {
       "package": "setimmediate",
       "description": "A shim for the setImmediate efficient script yielding API",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@synonymdev/pubky",
-      "description": "Pubky client",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -131,13 +126,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@metamask/api-specs",
-      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
+      "package": "cypress-repeat",
+      "description": "Run Cypress multiple times in a row",
       "source": "npm_registry"
     },
     {
-      "package": "cypress-repeat",
-      "description": "Run Cypress multiple times in a row",
+      "package": "@metamask/api-specs",
+      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
       "source": "npm_registry"
     },
     {
@@ -146,8 +141,18 @@
       "source": "npm_registry"
     },
     {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "source": "npm_registry"
+    },
+    {
       "package": "expo-updates",
       "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/react-native-pubky",
+      "description": "React Native Implementation of Pubky",
       "source": "npm_registry"
     },
     {
@@ -161,18 +166,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/react-native-pubky",
-      "description": "React Native Implementation of Pubky",
-      "source": "npm_registry"
-    },
-    {
       "package": "openapi-schema-validator",
       "description": "A validator for OpenAPI documents.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@substrate/connect-known-chains",
-      "description": "Substrate-connect well known chain specifications",
       "source": "npm_registry"
     },
     {
@@ -181,13 +176,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@rails/webpacker",
-      "description": "Use webpack to manage app-like JavaScript modules in Rails",
+      "package": "@substrate/connect-known-chains",
+      "description": "Substrate-connect well known chain specifications",
       "source": "npm_registry"
     },
     {
       "package": "@webcomponents/custom-elements",
       "description": "HTML Custom Elements Polyfill",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@rails/webpacker",
+      "description": "Use webpack to manage app-like JavaScript modules in Rails",
       "source": "npm_registry"
     },
     {
@@ -201,8 +201,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/helpers",
-      "description": "A collection of dependency free helpers",
+      "package": "json-joy",
+      "description": "Collection of libraries for building collaborative editing apps.",
       "source": "npm_registry"
     },
     {
@@ -211,18 +211,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@polkadot/types-known",
-      "description": "Known type definitions",
-      "source": "npm_registry"
-    },
-    {
       "package": "css-shorthand-properties",
       "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
       "source": "npm_registry"
     },
     {
-      "package": "@withfig/autocomplete",
-      "description": "Fig Autocomplete Specs",
+      "package": "@polkadot/types-known",
+      "description": "Known type definitions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/helpers",
+      "description": "A collection of dependency free helpers",
       "source": "npm_registry"
     },
     {
@@ -231,13 +231,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/types",
-      "description": "Types to work with Scalar packages",
+      "package": "@encore-os/eos-spec",
+      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
       "source": "npm_registry"
     },
     {
-      "package": "json-joy",
-      "description": "Collection of libraries for building collaborative editing apps.",
+      "package": "@scalar/types",
+      "description": "Types to work with Scalar packages",
       "source": "npm_registry"
     },
     {
@@ -246,18 +246,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@selvajs/selva",
-      "description": "Selva \u2014 self-contained Grasshopper-driven web app. Install, configure via .env, deploy.",
-      "source": "npm_registry"
-    },
-    {
       "package": "@microsoft/agents-activity",
       "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@encore-os/eos-spec",
-      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
       "source": "npm_registry"
     },
     {
@@ -276,6 +266,16 @@
       "source": "npm_registry"
     },
     {
+      "package": "@scalar/schemas",
+      "description": "Schemas for Scalar packages",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@withfig/autocomplete",
+      "description": "Fig Autocomplete Specs",
+      "source": "npm_registry"
+    },
+    {
       "package": "pwa-asset-generator",
       "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
       "source": "npm_registry"
@@ -286,13 +286,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "datocms-structured-text-utils",
-      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@scalar/schemas",
-      "description": "Schemas for Scalar packages",
+      "package": "jasmine",
+      "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
       "source": "npm_registry"
     },
     {
@@ -301,23 +296,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "jasmine",
-      "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@perma/map",
-      "description": "Immutable hash maps implemented as hash array papped tries",
-      "source": "npm_registry"
-    },
-    {
       "package": "@darwinia/types-known",
       "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
       "source": "npm_registry"
     },
     {
-      "package": "grunt-contrib-jasmine",
-      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "package": "datocms-structured-text-utils",
+      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
       "source": "npm_registry"
     },
     {
@@ -326,8 +311,23 @@
       "source": "npm_registry"
     },
     {
-      "package": "@fig/autocomplete-helpers",
-      "description": "Helper functions for fig completion specs",
+      "package": "@perma/map",
+      "description": "Immutable hash maps implemented as hash array papped tries",
+      "source": "npm_registry"
+    },
+    {
+      "package": "grunt-contrib-jasmine",
+      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@atproto/lex-json",
+      "description": "Lexicon encoding utilities for AT Lexicon data in JSON format",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@selvajs/selva",
+      "description": "Selva \u2014 self-contained Grasshopper-driven web app. Install, configure via .env, deploy.",
       "source": "npm_registry"
     },
     {
@@ -340,15 +340,19 @@
       "source": "github_package_json"
     },
     {
+      "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
       "package": "PastaGringo/pubky-roadmap",
       "source": "github_package_json"
     },
     {
-      "package": "yethikrishna/varsha_v1",
+      "package": "gillohner/pubky-ical-poc",
       "source": "github_package_json"
     },
     {
-      "package": "gillohner/pubky-ical-poc",
+      "package": "yethikrishna/varsha_v1",
       "source": "github_package_json"
     },
     {
@@ -361,10 +365,6 @@
     },
     {
       "package": "PastaGringo/pubky-homeserver",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-app",
       "source": "github_package_json"
     }
   ]

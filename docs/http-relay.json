@@ -1,10 +1,10 @@
 {
   "crate": "http-relay",
-  "updated_at": "2026-07-27T10:33:22.056932+00:00",
-  "total": 8,
+  "updated_at": "2026-08-10T09:56:54.890901+00:00",
+  "total": 10,
   "summary": {
     "pubky-testnet": 5,
-    "direct": 2,
+    "direct": 4,
     "unknown": 1
   },
   "lists": {
@@ -43,7 +43,7 @@
           "pubky-testnet",
           "http-relay"
         ],
-        "stars": 21
+        "stars": 22
       },
       {
         "repo": "pubky/pubky-noise",
@@ -52,7 +52,7 @@
           "pubky-testnet",
           "http-relay"
         ],
-        "stars": 2
+        "stars": 3
       }
     ],
     "direct": [
@@ -70,9 +70,31 @@
         "default_features": false
       },
       {
+        "repo": "pubky/paykit-server",
+        "chain": [
+          "paykit-server",
+          "http-relay"
+        ],
+        "stars": 0,
+        "version": "0.7",
+        "features": [
+          "server"
+        ],
+        "default_features": false
+      },
+      {
         "repo": "pubky/pubky-core",
         "chain": [
           "pubky-core",
+          "http-relay"
+        ],
+        "stars": 84,
+        "version": "0.7"
+      },
+      {
+        "repo": "pubky/pubky-homeserver",
+        "chain": [
+          "pubky-homeserver",
           "http-relay"
         ],
         "stars": 84,
@@ -88,7 +110,7 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 8945,
-    "recent": 1898
+    "total": 9286,
+    "recent": 2096
   }
 }
