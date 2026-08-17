@@ -1,55 +1,16 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-08-10T09:42:59.837220+00:00",
-  "total": 7,
+  "updated_at": "2026-08-17T09:07:32.390358+00:00",
+  "total": 3,
   "summary": {
-    "direct": 7
+    "direct": 3
   },
   "lists": {
     "direct": [
       {
-        "repo": "MiguelMedeiros/ai-rand",
-        "chain": [
-          "client-pubky",
-          "pubky-app-specs"
-        ],
-        "stars": 3,
-        "version": "0.3.3"
-      },
-      {
-        "repo": "SHAcollision/pubky-vibes",
-        "chain": [
-          "pubky-swiss-knife",
-          "pubky-app-specs"
-        ],
-        "stars": 2,
-        "version": "0.4"
-      },
-      {
-        "repo": "gillohner/eventky-app-specs",
-        "chain": [
-          "eventky-app-specs",
-          "pubky-app-specs"
-        ],
-        "stars": 0,
-        "version": "0.4.3"
-      },
-      {
         "repo": "gillohner/mapky-app-specs",
         "chain": [
           "mapky-app-specs",
-          "pubky-app-specs"
-        ],
-        "stars": 0,
-        "version": "0.5.2",
-        "features": [
-          "openapi"
-        ]
-      },
-      {
-        "repo": "gillohner/mapky-nexus-plugin",
-        "chain": [
-          "mapky-nexus-plugin",
           "pubky-app-specs"
         ],
         "stars": 0,
@@ -65,7 +26,7 @@
           "pubky-app-specs"
         ],
         "stars": 22,
-        "version": "0.7.0",
+        "version": "0.8.0",
         "features": [
           "openapi"
         ]
@@ -82,12 +43,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 9876,
-    "recent": 1120
+    "total": 9999,
+    "recent": 1179
   },
   "npm_downloads": {
-    "total": 27743,
-    "recent": 3880
+    "total": 28304,
+    "recent": 3383
   },
   "npm_dependents": [
     {
@@ -96,13 +57,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/pubky",
-      "description": "Decentralized identity, auth flows, and user-owned storage",
+      "package": "@sigstore/protobuf-specs",
+      "description": "code-signing for npm packages",
       "source": "npm_registry"
     },
     {
-      "package": "@sigstore/protobuf-specs",
-      "description": "code-signing for npm packages",
+      "package": "@synonymdev/pubky",
+      "description": "Decentralized identity, auth flows, and user-owned storage",
       "source": "npm_registry"
     },
     {
@@ -116,28 +77,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "device-specs",
-      "description": "A list of devices that can be emulated using Chrome DevTools.",
-      "source": "npm_registry"
-    },
-    {
       "package": "cypress-split",
       "description": "Split Cypress specs across parallel CI machines for speed",
       "source": "npm_registry"
     },
     {
-      "package": "cypress-repeat",
-      "description": "Run Cypress multiple times in a row",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@metamask/api-specs",
-      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@types/har-format",
-      "description": "TypeScript definitions for har-format",
+      "package": "device-specs",
+      "description": "A list of devices that can be emulated using Chrome DevTools.",
       "source": "npm_registry"
     },
     {
@@ -146,8 +92,28 @@
       "source": "npm_registry"
     },
     {
+      "package": "cypress-repeat",
+      "description": "Run Cypress multiple times in a row",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@types/har-format",
+      "description": "TypeScript definitions for har-format",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@metamask/api-specs",
+      "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
+      "source": "npm_registry"
+    },
+    {
       "package": "expo-updates",
       "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@react-native/codegen",
+      "description": "Code generation tools for React Native",
       "source": "npm_registry"
     },
     {
@@ -176,6 +142,11 @@
       "source": "npm_registry"
     },
     {
+      "package": "json-joy",
+      "description": "Collection of libraries for building collaborative editing apps.",
+      "source": "npm_registry"
+    },
+    {
       "package": "@substrate/connect-known-chains",
       "description": "Substrate-connect well known chain specifications",
       "source": "npm_registry"
@@ -191,23 +162,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "graphology",
-      "description": "A robust and multipurpose Graph object for JavaScript.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@replit/oidc-provider",
-      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
-      "source": "npm_registry"
-    },
-    {
-      "package": "json-joy",
-      "description": "Collection of libraries for building collaborative editing apps.",
-      "source": "npm_registry"
-    },
-    {
       "package": "officecrypto-tool",
       "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "graphology",
+      "description": "A robust and multipurpose Graph object for JavaScript.",
       "source": "npm_registry"
     },
     {
@@ -216,13 +177,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@polkadot/types-known",
-      "description": "Known type definitions",
+      "package": "@replit/oidc-provider",
+      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
       "source": "npm_registry"
     },
     {
       "package": "@scalar/helpers",
       "description": "A collection of dependency free helpers",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@polkadot/types-known",
+      "description": "Known type definitions",
       "source": "npm_registry"
     },
     {
@@ -251,16 +217,6 @@
       "source": "npm_registry"
     },
     {
-      "package": "applicationinsights",
-      "description": "Microsoft Application Insights module for Node.js",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@asyncapi/specs",
-      "description": "AsyncAPI schema versions",
-      "source": "npm_registry"
-    },
-    {
       "package": "@chainsafe/libp2p-gossipsub",
       "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
@@ -271,8 +227,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@withfig/autocomplete",
-      "description": "Fig Autocomplete Specs",
+      "package": "applicationinsights",
+      "description": "Microsoft Application Insights module for Node.js",
       "source": "npm_registry"
     },
     {
@@ -281,8 +237,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "package": "@asyncapi/specs",
+      "description": "AsyncAPI schema versions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@withfig/autocomplete",
+      "description": "Fig Autocomplete Specs",
       "source": "npm_registry"
     },
     {
@@ -291,8 +252,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@markuplint/react-spec",
-      "description": "Extended specification for tags and attributes in React",
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@perma/map",
+      "description": "Immutable hash maps implemented as hash array papped tries",
       "source": "npm_registry"
     },
     {
@@ -306,13 +272,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@metamask/multichain-api-middleware",
-      "description": "JSON-RPC methods and middleware to support the MetaMask Multichain API",
+      "package": "@markuplint/react-spec",
+      "description": "Extended specification for tags and attributes in React",
       "source": "npm_registry"
     },
     {
-      "package": "@perma/map",
-      "description": "Immutable hash maps implemented as hash array papped tries",
+      "package": "@metamask/multichain-api-middleware",
+      "description": "JSON-RPC methods and middleware to support the MetaMask Multichain API",
       "source": "npm_registry"
     },
     {
@@ -321,51 +287,14 @@
       "source": "npm_registry"
     },
     {
+      "package": "@react-native/eslint-plugin-specs",
+      "description": "ESLint rules to validate NativeModule and Component Specs",
+      "source": "npm_registry"
+    },
+    {
       "package": "@atproto/lex-json",
       "description": "Lexicon encoding utilities for AT Lexicon data in JSON format",
       "source": "npm_registry"
-    },
-    {
-      "package": "@selvajs/selva",
-      "description": "Selva \u2014 self-contained Grasshopper-driven web app. Install, configure via .env, deploy.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "officeparser",
-      "description": "A robust, strictly-typed Node.js and Browser library for parsing office files (.docx, .pptx, .xlsx, .odt, .odp, .ods, .pdf, .rtf, .csv, .md, .html, .epub) and generating high-fidelity outputs in Markdown, HTML, CSV, RTF, PDF, EPUB, and RAG-focused chunks.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "pubky/pubky-app-specs",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-app",
-      "source": "github_package_json"
-    },
-    {
-      "package": "PastaGringo/pubky-roadmap",
-      "source": "github_package_json"
-    },
-    {
-      "package": "gillohner/pubky-ical-poc",
-      "source": "github_package_json"
-    },
-    {
-      "package": "yethikrishna/varsha_v1",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-ai-bot",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/agent-skills",
-      "source": "github_package_json"
-    },
-    {
-      "package": "PastaGringo/pubky-homeserver",
-      "source": "github_package_json"
     }
   ]
 }

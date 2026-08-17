@@ -1,41 +1,41 @@
 {
   "crate": "http-relay",
-  "updated_at": "2026-08-10T09:56:54.890901+00:00",
-  "total": 10,
+  "updated_at": "2026-08-17T09:13:04.166536+00:00",
+  "total": 5,
   "summary": {
-    "pubky-testnet": 5,
-    "direct": 4,
-    "unknown": 1
+    "direct": 3,
+    "pubky-testnet": 2
   },
   "lists": {
-    "pubky-testnet": [
+    "direct": [
       {
-        "repo": "BitcoinErrorLog/paykit-rs",
+        "repo": "pubky/paykit-server",
         "chain": [
-          "paykit-demo-cli",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 1
-      },
-      {
-        "repo": "pubky/pubky-backup",
-        "chain": [
-          "pubky-backup-core",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 1
-      },
-      {
-        "repo": "pubky/pubky-cli",
-        "chain": [
-          "pubky-cli",
-          "pubky-testnet",
+          "paykit-server",
           "http-relay"
         ],
         "stars": 0
       },
+      {
+        "repo": "pubky/pubky-core",
+        "chain": [
+          "pubky-core",
+          "http-relay"
+        ],
+        "stars": 86,
+        "version": "0.7"
+      },
+      {
+        "repo": "pubky/pubky-homeserver",
+        "chain": [
+          "pubky-homeserver",
+          "http-relay"
+        ],
+        "stars": 86,
+        "version": "0.7"
+      }
+    ],
+    "pubky-testnet": [
       {
         "repo": "pubky/pubky-nexus",
         "chain": [
@@ -54,63 +54,10 @@
         ],
         "stars": 3
       }
-    ],
-    "direct": [
-      {
-        "repo": "pubky/paykit-rs",
-        "chain": [
-          "paykit-sdk",
-          "http-relay"
-        ],
-        "stars": 5,
-        "version": "0.7.0",
-        "features": [
-          "server"
-        ],
-        "default_features": false
-      },
-      {
-        "repo": "pubky/paykit-server",
-        "chain": [
-          "paykit-server",
-          "http-relay"
-        ],
-        "stars": 0,
-        "version": "0.7",
-        "features": [
-          "server"
-        ],
-        "default_features": false
-      },
-      {
-        "repo": "pubky/pubky-core",
-        "chain": [
-          "pubky-core",
-          "http-relay"
-        ],
-        "stars": 84,
-        "version": "0.7"
-      },
-      {
-        "repo": "pubky/pubky-homeserver",
-        "chain": [
-          "pubky-homeserver",
-          "http-relay"
-        ],
-        "stars": 84,
-        "version": "0.7"
-      }
-    ],
-    "unknown": [
-      {
-        "repo": "ryannzander/hush",
-        "chain": [],
-        "stars": 1
-      }
     ]
   },
   "crates_io_downloads": {
-    "total": 9286,
-    "recent": 2096
+    "total": 9421,
+    "recent": 2058
   }
 }
