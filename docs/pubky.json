@@ -1,12 +1,51 @@
 {
   "crate": "pubky",
-  "updated_at": "2026-08-17T09:07:11.006382+00:00",
-  "total": 8,
+  "updated_at": "2026-08-24T07:34:32.705953+00:00",
+  "total": 28,
   "summary": {
-    "direct": 8
+    "direct": 26,
+    "pubky-messenger": 2
   },
   "lists": {
     "direct": [
+      {
+        "repo": "BitcoinErrorLog/paykit-rs",
+        "chain": [
+          "paykit-lib",
+          "pubky"
+        ],
+        "stars": 1,
+        "version": "workspace",
+        "optional": true
+      },
+      {
+        "repo": "BitcoinErrorLog/pubky-noise",
+        "chain": [
+          "pubky-noise",
+          "pubky"
+        ],
+        "stars": 3,
+        "version": "workspace",
+        "optional": true
+      },
+      {
+        "repo": "SHAcollision/pubky-vibes",
+        "chain": [
+          "pubky-swiss-knife",
+          "pubky"
+        ],
+        "stars": 2,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "TrustEdge-Labs/sealedge",
+        "chain": [
+          "sealedge-pubky",
+          "pubky"
+        ],
+        "stars": 6,
+        "version": "0.5.4"
+      },
       {
         "repo": "coreyphillips/pubky-messenger",
         "chain": [
@@ -17,6 +56,33 @@
         "version": "0.4"
       },
       {
+        "repo": "coreyphillips/pubky-private-messenger",
+        "chain": [
+          "pubky-private-messenger",
+          "pubky"
+        ],
+        "stars": 8,
+        "version": "0.4.2"
+      },
+      {
+        "repo": "coreyphillips/vanity-pubky",
+        "chain": [
+          "vanity-pubky",
+          "pubky"
+        ],
+        "stars": 3,
+        "version": "0.4.2"
+      },
+      {
+        "repo": "gillohner/eventky-app-specs",
+        "chain": [
+          "eventky-app-specs",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.5"
+      },
+      {
         "repo": "gillohner/mapky-app-specs",
         "chain": [
           "mapky-app-specs",
@@ -24,6 +90,75 @@
         ],
         "stars": 0,
         "version": "0.5"
+      },
+      {
+        "repo": "gillohner/mapky-nexus-plugin",
+        "chain": [
+          "mapky-nexus-plugin",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.8.0"
+      },
+      {
+        "repo": "gillohner/pubky-canva",
+        "chain": [
+          "canva-indexer",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "workspace"
+      },
+      {
+        "repo": "icota/pubky-migrate",
+        "chain": [
+          "pubky-migrate",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.11"
+      },
+      {
+        "repo": "ok300/pk-docs",
+        "chain": [
+          "pubky-snippets",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "0.6.0-rc.6"
+      },
+      {
+        "repo": "pubky/agent-skills",
+        "chain": [
+          "pubky-snippet-harness-rust",
+          "pubky"
+        ],
+        "stars": 0,
+        "version": "=0.9.3",
+        "features": [
+          "json"
+        ]
+      },
+      {
+        "repo": "pubky/locks",
+        "chain": [
+          "locks",
+          "pubky"
+        ],
+        "stars": 2,
+        "version": "0.9.0",
+        "features": [
+          "json"
+        ]
+      },
+      {
+        "repo": "pubky/paykit-rs",
+        "chain": [
+          "paykit-sdk",
+          "pubky"
+        ],
+        "stars": 5,
+        "version": "0.8.0"
       },
       {
         "repo": "pubky/paykit-server",
@@ -44,6 +179,15 @@
         "version": "0.10.0"
       },
       {
+        "repo": "pubky/pubky-backup",
+        "chain": [
+          "pubky-backup-core",
+          "pubky"
+        ],
+        "stars": 1,
+        "version": "workspace"
+      },
+      {
         "repo": "pubky/pubky-cli",
         "chain": [
           "pubky-cli",
@@ -53,14 +197,37 @@
         "version": "0.6.0-rc.6"
       },
       {
-        "repo": "pubky/pubky-homeserver",
+        "repo": "pubky/pubky-core-ffi",
         "chain": [
-          "pubky-homeserver",
+          "pubkycore",
           "pubky"
         ],
-        "stars": 86,
-        "version": "0.10",
-        "default_features": false
+        "stars": 3,
+        "version": "0.10.0"
+      },
+      {
+        "repo": "pubky/pubky-homeserver",
+        "chain": [
+          "pubky-testnet",
+          "pubky"
+        ],
+        "stars": 87,
+        "version": "workspace",
+        "features": [
+          "json"
+        ]
+      },
+      {
+        "repo": "pubky/pubky-knowledge-base-v2",
+        "chain": [
+          "pubky-doc-snippets",
+          "pubky"
+        ],
+        "stars": 1,
+        "version": "=0.10.0",
+        "features": [
+          "json"
+        ]
       },
       {
         "repo": "pubky/pubky-nexus",
@@ -77,21 +244,51 @@
           "pubky-noise",
           "pubky"
         ],
-        "stars": 3
+        "stars": 3,
+        "version": "0.10.0"
+      },
+      {
+        "repo": "synonymdev/bitkit-core",
+        "chain": [
+          "bitkitcore",
+          "pubky"
+        ],
+        "stars": 5,
+        "version": "0.6.0"
+      }
+    ],
+    "pubky-messenger": [
+      {
+        "repo": "coreyphillips/bitcoin-batch-coordinator",
+        "chain": [
+          "common",
+          "pubky-messenger",
+          "pubky"
+        ],
+        "stars": 0
+      },
+      {
+        "repo": "coreyphillips/pubky-swap",
+        "chain": [
+          "pubky-transport",
+          "pubky-messenger",
+          "pubky"
+        ],
+        "stars": 0
       }
     ]
   },
   "crates_io_downloads": {
-    "total": 21569,
-    "recent": 2886
+    "total": 21885,
+    "recent": 2925
   },
   "npm_downloads": {
-    "total": 30487,
-    "recent": 3732
+    "total": 32292,
+    "recent": 4541
   },
   "rn_downloads": {
-    "total": 6074,
-    "recent": 666
+    "total": 6196,
+    "recent": 718
   },
   "npm_dependents": [
     {
@@ -120,13 +317,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/slashdrive",
-      "description": "drive",
+      "package": "@synonymdev/slashtags-sdk",
+      "description": "slashtags development kit",
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/slashtags-sdk",
-      "description": "slashtags development kit",
+      "package": "@synonymdev/slashdrive",
+      "description": "drive",
       "source": "npm_registry"
     },
     {
@@ -142,6 +339,11 @@
     {
       "package": "@synonymdev/slashtags-auth",
       "description": "P2P authorization and bidirectional authentication with holepunching through Hyperswarm.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-lsp-btc-client",
+      "description": "Blocktank BTC client",
       "source": "npm_registry"
     },
     {
@@ -170,11 +372,6 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/blocktank-lsp-btc-client",
-      "description": "Blocktank BTC client",
-      "source": "npm_registry"
-    },
-    {
       "package": "@synonymdev/slashtags-url",
       "description": "Encodes and decodes Slashtags URLs",
       "source": "npm_registry"
@@ -185,8 +382,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/slashtags-rpc",
-      "description": "helper module for creating RPCs using Slashtags nodes",
+      "package": "@synonymdev/react-native-lightning",
+      "description": "React Native wrapper for Lndmobile",
       "source": "npm_registry"
     },
     {
@@ -200,8 +397,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/react-native-lightning",
-      "description": "React Native wrapper for Lndmobile",
+      "package": "@synonymdev/slashtags-rpc",
+      "description": "helper module for creating RPCs using Slashtags nodes",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/feeds",
+      "description": "A library for creating and managing feeds using the web-relay",
       "source": "npm_registry"
     },
     {
@@ -215,8 +417,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/feeds",
-      "description": "A library for creating and managing feeds using the web-relay",
+      "package": "@synonymdev/slashtags-actions",
+      "description": "Packaged handlers for Slashtags actions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "astra-lightning",
+      "description": "Lightning Network client library",
       "source": "npm_registry"
     },
     {
@@ -230,28 +437,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "astra-lightning",
-      "description": "Lightning Network client library",
-      "source": "npm_registry"
-    },
-    {
       "package": "@synonymdev/slashtags-cli",
       "description": "CLI for slashtags",
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/slashtags-actions",
-      "description": "Packaged handlers for Slashtags actions",
+      "package": "@synonymdev/react-native-slashtags",
+      "description": "React Native wrapper for Slashtags",
       "source": "npm_registry"
     },
     {
       "package": "noskey",
       "description": "generate nostr key",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@synonymdev/react-native-slashtags",
-      "description": "React Native wrapper for Slashtags",
       "source": "npm_registry"
     },
     {
@@ -275,18 +472,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/blocktank-worker2",
-      "description": "",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
-      "source": "npm_registry"
-    },
-    {
       "package": "hackday-slashpay",
       "description": "[Read more](https://docs.google.com/document/d/10rgPbDMer6uL7L8QZ5ve-KU_pkI_YSwSO4dmzUmjU6s/edit)",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@synonymdev/blocktank-worker2",
+      "description": "",
       "source": "npm_registry"
     },
     {
@@ -295,8 +487,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "eventky-app-specs",
-      "description": "Eventky Data Model Specifications",
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -305,8 +497,18 @@
       "source": "npm_registry"
     },
     {
+      "package": "eventky-app-specs",
+      "description": "Eventky Data Model Specifications",
+      "source": "npm_registry"
+    },
+    {
       "package": "@synonymdev/bitkit-notification-client",
       "description": "Bitkit Notification Server client",
+      "source": "npm_registry"
+    },
+    {
+      "package": "slashtags-feed-reader",
+      "description": "Collection of helper functions to read Slashtags feeds from a Hyperdrive.",
       "source": "npm_registry"
     },
     {
@@ -315,9 +517,100 @@
       "source": "npm_registry"
     },
     {
-      "package": "slashtags-feed-reader",
-      "description": "Collection of helper functions to read Slashtags feeds from a Hyperdrive.",
-      "source": "npm_registry"
+      "package": "pubky/pubky-homeserver",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-explorer",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pwpw",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/homegate-hackathon25",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/eventky",
+      "source": "github_package_json"
+    },
+    {
+      "package": "coreyphillips/geostories",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-roadmap",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/arcade",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ring-simulator",
+      "source": "github_package_json"
+    },
+    {
+      "package": "coreyphillips/pubky-messenger-ts",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/locks",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/loombot_web",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-ical-poc",
+      "source": "github_package_json"
+    },
+    {
+      "package": "aljazceru/pak",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/workshop",
+      "source": "github_package_json"
+    },
+    {
+      "package": "yethikrishna/varsha_v1",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-knowledge-base-v2",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-app-templates",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-canva",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/agent-skills",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-tools",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-homeserver",
+      "source": "github_package_json"
     }
   ]
 }

@@ -1,16 +1,46 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-08-17T09:07:32.390358+00:00",
-  "total": 3,
+  "updated_at": "2026-08-24T07:38:30.133631+00:00",
+  "total": 6,
   "summary": {
-    "direct": 3
+    "direct": 6
   },
   "lists": {
     "direct": [
       {
+        "repo": "SHAcollision/pubky-vibes",
+        "chain": [
+          "pubky-swiss-knife",
+          "pubky-app-specs"
+        ],
+        "stars": 2,
+        "version": "0.4"
+      },
+      {
+        "repo": "gillohner/eventky-app-specs",
+        "chain": [
+          "eventky-app-specs",
+          "pubky-app-specs"
+        ],
+        "stars": 0,
+        "version": "0.4.3"
+      },
+      {
         "repo": "gillohner/mapky-app-specs",
         "chain": [
           "mapky-app-specs",
+          "pubky-app-specs"
+        ],
+        "stars": 0,
+        "version": "0.5.2",
+        "features": [
+          "openapi"
+        ]
+      },
+      {
+        "repo": "gillohner/mapky-nexus-plugin",
+        "chain": [
+          "mapky-nexus-plugin",
           "pubky-app-specs"
         ],
         "stars": 0,
@@ -43,12 +73,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 9999,
-    "recent": 1179
+    "total": 10083,
+    "recent": 1139
   },
   "npm_downloads": {
-    "total": 28304,
-    "recent": 3383
+    "total": 29542,
+    "recent": 3718
   },
   "npm_dependents": [
     {
@@ -87,6 +117,11 @@
       "source": "npm_registry"
     },
     {
+      "package": "@types/har-format",
+      "description": "TypeScript definitions for har-format",
+      "source": "npm_registry"
+    },
+    {
       "package": "@eventky/pubky-app-specs",
       "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
@@ -97,18 +132,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@types/har-format",
-      "description": "TypeScript definitions for har-format",
+      "package": "expo-updates",
+      "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
       "source": "npm_registry"
     },
     {
       "package": "@metamask/api-specs",
       "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
-      "source": "npm_registry"
-    },
-    {
-      "package": "expo-updates",
-      "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
       "source": "npm_registry"
     },
     {
@@ -162,11 +192,6 @@
       "source": "npm_registry"
     },
     {
-      "package": "officecrypto-tool",
-      "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
-      "source": "npm_registry"
-    },
-    {
       "package": "graphology",
       "description": "A robust and multipurpose Graph object for JavaScript.",
       "source": "npm_registry"
@@ -177,18 +202,33 @@
       "source": "npm_registry"
     },
     {
-      "package": "@replit/oidc-provider",
-      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
-      "source": "npm_registry"
-    },
-    {
       "package": "@scalar/helpers",
       "description": "A collection of dependency free helpers",
       "source": "npm_registry"
     },
     {
+      "package": "officecrypto-tool",
+      "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
+      "source": "npm_registry"
+    },
+    {
       "package": "@polkadot/types-known",
       "description": "Known type definitions",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/types",
+      "description": "Types to work with Scalar packages",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@replit/oidc-provider",
+      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@microsoft/agents-activity",
+      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
       "source": "npm_registry"
     },
     {
@@ -202,23 +242,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/types",
-      "description": "Types to work with Scalar packages",
-      "source": "npm_registry"
-    },
-    {
       "package": "instantsearch.css",
       "description": "InstantSearch.css is a CSS library to style InstantSearch-powered search experiences.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@microsoft/agents-activity",
-      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
     },
     {
@@ -232,13 +257,23 @@
       "source": "npm_registry"
     },
     {
+      "package": "@asyncapi/specs",
+      "description": "AsyncAPI schema versions",
+      "source": "npm_registry"
+    },
+    {
       "package": "pwa-asset-generator",
       "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
       "source": "npm_registry"
     },
     {
-      "package": "@asyncapi/specs",
-      "description": "AsyncAPI schema versions",
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
+      "source": "npm_registry"
+    },
+    {
+      "package": "datocms-structured-text-utils",
+      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
       "source": "npm_registry"
     },
     {
@@ -247,13 +282,33 @@
       "source": "npm_registry"
     },
     {
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "source": "npm_registry"
+    },
+    {
       "package": "jasmine",
       "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
       "source": "npm_registry"
     },
     {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "package": "@markuplint/react-spec",
+      "description": "Extended specification for tags and attributes in React",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@react-native/eslint-plugin-specs",
+      "description": "ESLint rules to validate NativeModule and Component Specs",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/oas-utils",
+      "description": "Open API spec and Yaml handling utilities",
+      "source": "npm_registry"
+    },
+    {
+      "package": "grunt-contrib-jasmine",
+      "description": "Run jasmine specs headlessly through Headless Chrome",
       "source": "npm_registry"
     },
     {
@@ -267,34 +322,41 @@
       "source": "npm_registry"
     },
     {
-      "package": "datocms-structured-text-utils",
-      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@markuplint/react-spec",
-      "description": "Extended specification for tags and attributes in React",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@metamask/multichain-api-middleware",
-      "description": "JSON-RPC methods and middleware to support the MetaMask Multichain API",
-      "source": "npm_registry"
-    },
-    {
-      "package": "grunt-contrib-jasmine",
-      "description": "Run jasmine specs headlessly through Headless Chrome",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@react-native/eslint-plugin-specs",
-      "description": "ESLint rules to validate NativeModule and Component Specs",
-      "source": "npm_registry"
-    },
-    {
       "package": "@atproto/lex-json",
       "description": "Lexicon encoding utilities for AT Lexicon data in JSON format",
       "source": "npm_registry"
+    },
+    {
+      "package": "pubky/pubky-app-specs",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-roadmap",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-ical-poc",
+      "source": "github_package_json"
+    },
+    {
+      "package": "yethikrishna/varsha_v1",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/agent-skills",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-homeserver",
+      "source": "github_package_json"
     }
   ]
 }

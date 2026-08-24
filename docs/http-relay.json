@@ -1,41 +1,49 @@
 {
   "crate": "http-relay",
-  "updated_at": "2026-08-17T09:13:04.166536+00:00",
-  "total": 5,
+  "updated_at": "2026-08-24T08:51:31.962000+00:00",
+  "total": 9,
   "summary": {
-    "direct": 3,
-    "pubky-testnet": 2
+    "pubky-testnet": 6,
+    "direct": 3
   },
   "lists": {
-    "direct": [
+    "pubky-testnet": [
       {
-        "repo": "pubky/paykit-server",
+        "repo": "BitcoinErrorLog/paykit-rs",
         "chain": [
-          "paykit-server",
+          "paykit-demo-cli",
+          "pubky-testnet",
+          "http-relay"
+        ],
+        "stars": 1
+      },
+      {
+        "repo": "icota/pubky-migrate",
+        "chain": [
+          "pubky-migrate",
+          "pubky-testnet",
           "http-relay"
         ],
         "stars": 0
       },
       {
-        "repo": "pubky/pubky-core",
+        "repo": "pubky/pubky-backup",
         "chain": [
-          "pubky-core",
+          "pubky-backup-core",
+          "pubky-testnet",
           "http-relay"
         ],
-        "stars": 86,
-        "version": "0.7"
+        "stars": 1
       },
       {
-        "repo": "pubky/pubky-homeserver",
+        "repo": "pubky/pubky-cli",
         "chain": [
-          "pubky-homeserver",
+          "pubky-cli",
+          "pubky-testnet",
           "http-relay"
         ],
-        "stars": 86,
-        "version": "0.7"
-      }
-    ],
-    "pubky-testnet": [
+        "stars": 0
+      },
       {
         "repo": "pubky/pubky-nexus",
         "chain": [
@@ -54,10 +62,47 @@
         ],
         "stars": 3
       }
+    ],
+    "direct": [
+      {
+        "repo": "pubky/paykit-rs",
+        "chain": [
+          "paykit-sdk",
+          "http-relay"
+        ],
+        "stars": 5,
+        "version": "0.7.0",
+        "features": [
+          "server"
+        ],
+        "default_features": false
+      },
+      {
+        "repo": "pubky/paykit-server",
+        "chain": [
+          "paykit-server",
+          "http-relay"
+        ],
+        "stars": 0,
+        "version": "0.7",
+        "features": [
+          "server"
+        ],
+        "default_features": false
+      },
+      {
+        "repo": "pubky/pubky-homeserver",
+        "chain": [
+          "pubky-homeserver",
+          "http-relay"
+        ],
+        "stars": 87,
+        "version": "0.7"
+      }
     ]
   },
   "crates_io_downloads": {
-    "total": 9421,
-    "recent": 2058
+    "total": 9622,
+    "recent": 2117
   }
 }
