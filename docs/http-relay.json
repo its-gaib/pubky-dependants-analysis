@@ -1,68 +1,12 @@
 {
   "crate": "http-relay",
-  "updated_at": "2026-08-24T08:51:31.962000+00:00",
-  "total": 9,
+  "updated_at": "2026-08-31T12:16:27.857347+00:00",
+  "total": 5,
   "summary": {
-    "pubky-testnet": 6,
-    "direct": 3
+    "direct": 3,
+    "pubky-testnet": 2
   },
   "lists": {
-    "pubky-testnet": [
-      {
-        "repo": "BitcoinErrorLog/paykit-rs",
-        "chain": [
-          "paykit-demo-cli",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 1
-      },
-      {
-        "repo": "icota/pubky-migrate",
-        "chain": [
-          "pubky-migrate",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 0
-      },
-      {
-        "repo": "pubky/pubky-backup",
-        "chain": [
-          "pubky-backup-core",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 1
-      },
-      {
-        "repo": "pubky/pubky-cli",
-        "chain": [
-          "pubky-cli",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 0
-      },
-      {
-        "repo": "pubky/pubky-nexus",
-        "chain": [
-          "nexus-watcher",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 22
-      },
-      {
-        "repo": "pubky/pubky-noise",
-        "chain": [
-          "e2e",
-          "pubky-testnet",
-          "http-relay"
-        ],
-        "stars": 3
-      }
-    ],
     "direct": [
       {
         "repo": "pubky/paykit-rs",
@@ -70,7 +14,7 @@
           "paykit-sdk",
           "http-relay"
         ],
-        "stars": 5,
+        "stars": 6,
         "version": "0.7.0",
         "features": [
           "server"
@@ -99,10 +43,30 @@
         "stars": 87,
         "version": "0.7"
       }
+    ],
+    "pubky-testnet": [
+      {
+        "repo": "pubky/pubky-nexus",
+        "chain": [
+          "nexus-watcher",
+          "pubky-testnet",
+          "http-relay"
+        ],
+        "stars": 22
+      },
+      {
+        "repo": "pubky/pubky-noise",
+        "chain": [
+          "e2e",
+          "pubky-testnet",
+          "http-relay"
+        ],
+        "stars": 3
+      }
     ]
   },
   "crates_io_downloads": {
-    "total": 9622,
-    "recent": 2117
+    "total": 9957,
+    "recent": 2274
   }
 }

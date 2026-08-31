@@ -1,46 +1,16 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-08-24T07:38:30.133631+00:00",
-  "total": 6,
+  "updated_at": "2026-08-31T12:11:01.233829+00:00",
+  "total": 3,
   "summary": {
-    "direct": 6
+    "direct": 3
   },
   "lists": {
     "direct": [
       {
-        "repo": "SHAcollision/pubky-vibes",
-        "chain": [
-          "pubky-swiss-knife",
-          "pubky-app-specs"
-        ],
-        "stars": 2,
-        "version": "0.4"
-      },
-      {
-        "repo": "gillohner/eventky-app-specs",
-        "chain": [
-          "eventky-app-specs",
-          "pubky-app-specs"
-        ],
-        "stars": 0,
-        "version": "0.4.3"
-      },
-      {
         "repo": "gillohner/mapky-app-specs",
         "chain": [
           "mapky-app-specs",
-          "pubky-app-specs"
-        ],
-        "stars": 0,
-        "version": "0.5.2",
-        "features": [
-          "openapi"
-        ]
-      },
-      {
-        "repo": "gillohner/mapky-nexus-plugin",
-        "chain": [
-          "mapky-nexus-plugin",
           "pubky-app-specs"
         ],
         "stars": 0,
@@ -73,12 +43,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 10083,
-    "recent": 1139
+    "total": 10123,
+    "recent": 1079
   },
   "npm_downloads": {
-    "total": 29542,
-    "recent": 3718
+    "total": 30332,
+    "recent": 4022
   },
   "npm_dependents": [
     {
@@ -87,13 +57,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@sigstore/protobuf-specs",
-      "description": "code-signing for npm packages",
+      "package": "@synonymdev/pubky",
+      "description": "Decentralized identity, auth flows, and user-owned storage",
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/pubky",
-      "description": "Decentralized identity, auth flows, and user-owned storage",
+      "package": "@sigstore/protobuf-specs",
+      "description": "code-signing for npm packages",
       "source": "npm_registry"
     },
     {
@@ -122,11 +92,6 @@
       "source": "npm_registry"
     },
     {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
-      "source": "npm_registry"
-    },
-    {
       "package": "cypress-repeat",
       "description": "Run Cypress multiple times in a row",
       "source": "npm_registry"
@@ -139,6 +104,11 @@
     {
       "package": "@metamask/api-specs",
       "description": "This repository contains the OpenRPC specification for MetaMask's Wallet JSON-RPC API. You can view the specs in the following formats:",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -157,13 +127,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "stop-only",
-      "description": "Detects '.only' left in the code accidentally",
+      "package": "openapi-schema-validator",
+      "description": "A validator for OpenAPI documents.",
       "source": "npm_registry"
     },
     {
-      "package": "openapi-schema-validator",
-      "description": "A validator for OpenAPI documents.",
+      "package": "stop-only",
+      "description": "Detects '.only' left in the code accidentally",
       "source": "npm_registry"
     },
     {
@@ -172,8 +142,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "json-joy",
-      "description": "Collection of libraries for building collaborative editing apps.",
+      "package": "@webcomponents/custom-elements",
+      "description": "HTML Custom Elements Polyfill",
       "source": "npm_registry"
     },
     {
@@ -182,13 +152,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@webcomponents/custom-elements",
-      "description": "HTML Custom Elements Polyfill",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@rails/webpacker",
-      "description": "Use webpack to manage app-like JavaScript modules in Rails",
+      "package": "json-joy",
+      "description": "Collection of libraries for building collaborative editing apps.",
       "source": "npm_registry"
     },
     {
@@ -197,13 +162,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "css-shorthand-properties",
-      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@scalar/helpers",
-      "description": "A collection of dependency free helpers",
+      "package": "@rails/webpacker",
+      "description": "Use webpack to manage app-like JavaScript modules in Rails",
       "source": "npm_registry"
     },
     {
@@ -212,33 +172,18 @@
       "source": "npm_registry"
     },
     {
+      "package": "css-shorthand-properties",
+      "description": "A simple list of CSS shorthand properties and which longhand properties they expand to",
+      "source": "npm_registry"
+    },
+    {
       "package": "@polkadot/types-known",
       "description": "Known type definitions",
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/types",
-      "description": "Types to work with Scalar packages",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@replit/oidc-provider",
-      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@microsoft/agents-activity",
-      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@atproto/syntax",
-      "description": "Validation for atproto identifiers and formats: DID, handle, NSID, AT URI, etc",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@encore-os/eos-spec",
-      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
+      "package": "@scalar/helpers",
+      "description": "A collection of dependency free helpers",
       "source": "npm_registry"
     },
     {
@@ -247,13 +192,33 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/schemas",
-      "description": "Schemas for Scalar packages",
+      "package": "@atproto/syntax",
+      "description": "Validation for atproto identifiers and formats: DID, handle, NSID, AT URI, etc",
       "source": "npm_registry"
     },
     {
-      "package": "applicationinsights",
-      "description": "Microsoft Application Insights module for Node.js",
+      "package": "@replit/oidc-provider",
+      "description": "OAuth 2.0 Authorization Server implementation for Node.js with OpenID Connect",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/types",
+      "description": "Types to work with Scalar packages",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@microsoft/agents-activity",
+      "description": "Microsoft 365 Agents SDK for JavaScript. Activity Protocol serialization and deserialization.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@encore-os/eos-spec",
+      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@scalar/schemas",
+      "description": "Schemas for Scalar packages",
       "source": "npm_registry"
     },
     {
@@ -262,33 +227,13 @@
       "source": "npm_registry"
     },
     {
+      "package": "applicationinsights",
+      "description": "Microsoft Application Insights module for Node.js",
+      "source": "npm_registry"
+    },
+    {
       "package": "pwa-asset-generator",
       "description": "Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. Updates manifest.json and index.html files with the generated images according to Web App Manifest specs and Apple Hum",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
-      "source": "npm_registry"
-    },
-    {
-      "package": "datocms-structured-text-utils",
-      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@withfig/autocomplete",
-      "description": "Fig Autocomplete Specs",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@ideal-postcodes/openapi",
-      "description": "Ideal Postcodes OpenAPI v3 specifications",
-      "source": "npm_registry"
-    },
-    {
-      "package": "jasmine",
-      "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
       "source": "npm_registry"
     },
     {
@@ -302,8 +247,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "@scalar/oas-utils",
-      "description": "Open API spec and Yaml handling utilities",
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@ideal-postcodes/openapi",
+      "description": "Ideal Postcodes OpenAPI v3 specifications",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@withfig/autocomplete",
+      "description": "Fig Autocomplete Specs",
       "source": "npm_registry"
     },
     {
@@ -312,13 +267,28 @@
       "source": "npm_registry"
     },
     {
+      "package": "jasmine",
+      "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
+      "source": "npm_registry"
+    },
+    {
+      "package": "datocms-structured-text-utils",
+      "description": "A set of Typescript types and helpers to work with DatoCMS Structured Text fields.",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@libp2p/gossipsub",
+      "description": "A typescript implementation of gossipsub",
+      "source": "npm_registry"
+    },
+    {
       "package": "@perma/map",
       "description": "Immutable hash maps implemented as hash array papped tries",
       "source": "npm_registry"
     },
     {
-      "package": "@darwinia/types-known",
-      "description": "A JavaScript wrapper for the Polkadot JsonRPC interface",
+      "package": "@atproto/lex-data",
+      "description": "Core utilities for AT Lexicons",
       "source": "npm_registry"
     },
     {
@@ -327,35 +297,7 @@
       "source": "npm_registry"
     },
     {
-      "package": "pubky/pubky-app-specs",
-      "source": "github_package_json"
-    },
-    {
       "package": "pubky/pubky-app",
-      "source": "github_package_json"
-    },
-    {
-      "package": "PastaGringo/pubky-roadmap",
-      "source": "github_package_json"
-    },
-    {
-      "package": "gillohner/pubky-ical-poc",
-      "source": "github_package_json"
-    },
-    {
-      "package": "yethikrishna/varsha_v1",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/pubky-ai-bot",
-      "source": "github_package_json"
-    },
-    {
-      "package": "pubky/agent-skills",
-      "source": "github_package_json"
-    },
-    {
-      "package": "PastaGringo/pubky-homeserver",
       "source": "github_package_json"
     }
   ]
