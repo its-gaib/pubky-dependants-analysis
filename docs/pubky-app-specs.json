@@ -1,16 +1,46 @@
 {
   "crate": "pubky-app-specs",
-  "updated_at": "2026-08-31T12:11:01.233829+00:00",
-  "total": 3,
+  "updated_at": "2026-09-07T11:53:05.749360+00:00",
+  "total": 6,
   "summary": {
-    "direct": 3
+    "direct": 6
   },
   "lists": {
     "direct": [
       {
+        "repo": "SHAcollision/pubky-vibes",
+        "chain": [
+          "pubky-swiss-knife",
+          "pubky-app-specs"
+        ],
+        "stars": 2,
+        "version": "0.4"
+      },
+      {
+        "repo": "gillohner/eventky-app-specs",
+        "chain": [
+          "eventky-app-specs",
+          "pubky-app-specs"
+        ],
+        "stars": 0,
+        "version": "0.4.3"
+      },
+      {
         "repo": "gillohner/mapky-app-specs",
         "chain": [
           "mapky-app-specs",
+          "pubky-app-specs"
+        ],
+        "stars": 0,
+        "version": "0.5.2",
+        "features": [
+          "openapi"
+        ]
+      },
+      {
+        "repo": "gillohner/mapky-nexus-plugin",
+        "chain": [
+          "mapky-nexus-plugin",
           "pubky-app-specs"
         ],
         "stars": 0,
@@ -26,7 +56,7 @@
           "pubky-app-specs"
         ],
         "stars": 22,
-        "version": "0.8.0",
+        "version": "0.7.0",
         "features": [
           "openapi"
         ]
@@ -43,12 +73,12 @@
     ]
   },
   "crates_io_downloads": {
-    "total": 10123,
-    "recent": 1079
+    "total": 10213,
+    "recent": 1070
   },
   "npm_downloads": {
-    "total": 30332,
-    "recent": 4022
+    "total": 31095,
+    "recent": 4027
   },
   "npm_dependents": [
     {
@@ -57,13 +87,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@synonymdev/pubky",
-      "description": "Decentralized identity, auth flows, and user-owned storage",
+      "package": "@sigstore/protobuf-specs",
+      "description": "code-signing for npm packages",
       "source": "npm_registry"
     },
     {
-      "package": "@sigstore/protobuf-specs",
-      "description": "code-signing for npm packages",
+      "package": "@synonymdev/pubky",
+      "description": "Decentralized identity, auth flows, and user-owned storage",
       "source": "npm_registry"
     },
     {
@@ -79,6 +109,11 @@
     {
       "package": "cypress-split",
       "description": "Split Cypress specs across parallel CI machines for speed",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@eventky/pubky-app-specs",
+      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
       "source": "npm_registry"
     },
     {
@@ -107,13 +142,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@eventky/pubky-app-specs",
-      "description": "Pubky.app Data Model Specifications including Eventky.app Extensions",
+      "package": "@react-native/codegen",
+      "description": "Code generation tools for React Native",
       "source": "npm_registry"
     },
     {
-      "package": "@react-native/codegen",
-      "description": "Code generation tools for React Native",
+      "package": "@scalar/api-reference",
+      "description": "Generate beautiful API references from OpenAPI documents",
       "source": "npm_registry"
     },
     {
@@ -127,13 +162,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "openapi-schema-validator",
-      "description": "A validator for OpenAPI documents.",
+      "package": "stop-only",
+      "description": "Detects '.only' left in the code accidentally",
       "source": "npm_registry"
     },
     {
-      "package": "stop-only",
-      "description": "Detects '.only' left in the code accidentally",
+      "package": "openapi-schema-validator",
+      "description": "A validator for OpenAPI documents.",
       "source": "npm_registry"
     },
     {
@@ -142,13 +177,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@webcomponents/custom-elements",
-      "description": "HTML Custom Elements Polyfill",
+      "package": "@substrate/connect-known-chains",
+      "description": "Substrate-connect well known chain specifications",
       "source": "npm_registry"
     },
     {
-      "package": "@substrate/connect-known-chains",
-      "description": "Substrate-connect well known chain specifications",
+      "package": "@webcomponents/custom-elements",
+      "description": "HTML Custom Elements Polyfill",
       "source": "npm_registry"
     },
     {
@@ -167,6 +202,11 @@
       "source": "npm_registry"
     },
     {
+      "package": "@scalar/helpers",
+      "description": "A collection of dependency free helpers",
+      "source": "npm_registry"
+    },
+    {
       "package": "officecrypto-tool",
       "description": "officeCrypto is a library for node.js that can be used to decrypt and encrypt excel files.",
       "source": "npm_registry"
@@ -179,16 +219,6 @@
     {
       "package": "@polkadot/types-known",
       "description": "Known type definitions",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@scalar/helpers",
-      "description": "A collection of dependency free helpers",
-      "source": "npm_registry"
-    },
-    {
-      "package": "instantsearch.css",
-      "description": "InstantSearch.css is a CSS library to style InstantSearch-powered search experiences.",
       "source": "npm_registry"
     },
     {
@@ -212,8 +242,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@encore-os/eos-spec",
-      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
+      "package": "instantsearch.css",
+      "description": "InstantSearch.css is a CSS library to style InstantSearch-powered search experiences.",
       "source": "npm_registry"
     },
     {
@@ -237,18 +267,8 @@
       "source": "npm_registry"
     },
     {
-      "package": "@markuplint/react-spec",
-      "description": "Extended specification for tags and attributes in React",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@react-native/eslint-plugin-specs",
-      "description": "ESLint rules to validate NativeModule and Component Specs",
-      "source": "npm_registry"
-    },
-    {
-      "package": "@chainsafe/libp2p-gossipsub",
-      "description": "A typescript implementation of gossipsub",
+      "package": "@encore-os/eos-spec",
+      "description": "Portable, config-driven spec-pipeline engine + quality harness. One canonical engine consumed as a library (with a client-safe /pure subpath) by every Encore-OS repo.",
       "source": "npm_registry"
     },
     {
@@ -262,8 +282,18 @@
       "source": "npm_registry"
     },
     {
-      "package": "grunt-contrib-jasmine",
-      "description": "Run jasmine specs headlessly through Headless Chrome",
+      "package": "@chainsafe/libp2p-gossipsub",
+      "description": "A typescript implementation of gossipsub",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@markuplint/react-spec",
+      "description": "Extended specification for tags and attributes in React",
+      "source": "npm_registry"
+    },
+    {
+      "package": "@libp2p/gossipsub",
+      "description": "A typescript implementation of gossipsub",
       "source": "npm_registry"
     },
     {
@@ -277,8 +307,13 @@
       "source": "npm_registry"
     },
     {
-      "package": "@libp2p/gossipsub",
-      "description": "A typescript implementation of gossipsub",
+      "package": "@react-native/eslint-plugin-specs",
+      "description": "ESLint rules to validate NativeModule and Component Specs",
+      "source": "npm_registry"
+    },
+    {
+      "package": "grunt-contrib-jasmine",
+      "description": "Run jasmine specs headlessly through Headless Chrome",
       "source": "npm_registry"
     },
     {
@@ -287,17 +322,40 @@
       "source": "npm_registry"
     },
     {
-      "package": "@atproto/lex-data",
-      "description": "Core utilities for AT Lexicons",
-      "source": "npm_registry"
-    },
-    {
       "package": "@atproto/lex-json",
       "description": "Lexicon encoding utilities for AT Lexicon data in JSON format",
       "source": "npm_registry"
     },
     {
+      "package": "pubky/pubky-app-specs",
+      "source": "github_package_json"
+    },
+    {
       "package": "pubky/pubky-app",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-roadmap",
+      "source": "github_package_json"
+    },
+    {
+      "package": "gillohner/pubky-ical-poc",
+      "source": "github_package_json"
+    },
+    {
+      "package": "yethikrishna/varsha_v1",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/pubky-ai-bot",
+      "source": "github_package_json"
+    },
+    {
+      "package": "pubky/agent-skills",
+      "source": "github_package_json"
+    },
+    {
+      "package": "PastaGringo/pubky-homeserver",
       "source": "github_package_json"
     }
   ]
